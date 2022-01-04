@@ -101,7 +101,7 @@ async function init() {
     let pmcc = new Date().getTime();
     const config = client.config;
     try {
-        await mongoose.connect(`mongodb+srv://${config.database.user}:${config.database.password}@${config.database.cluster}.3jpp4.mongodb.net/test`, {
+        await mongoose.connect(`mongodb+srv://${config.database.user}:${config.database.password}@${config.database.cluster}.uqyvv.mongodb.net/test`, {
             useFindAndModify: false, useNewUrlParser: true, dbName: 'Luno-Main', useUnifiedTopology: true, useCreateIndex: true
         }).catch(e => {
             let date = new Date(); date = date.toString().slice(date.toString().search(":") - 2, date.toString().search(":") + 6);

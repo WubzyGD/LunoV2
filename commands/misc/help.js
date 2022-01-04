@@ -39,7 +39,7 @@ module.exports = {
             let cle = await message.channel.send({embeds: [
                 new Discord.MessageEmbed()
                     .setTitle("Luno Help")
-                    .setDescription(`Here you can find a list of commands and how to use them.\n\nLuno's prefix, by default, is \`n?\`. Here, it's \`${prefix}\`.\n\nWhen viewing a command's syntax, a parameter/argument marked with <> means that it is required. [] shows that it is optional.\n\nGet more help on a command by sending it without any arguments (i.e. \`${prefix}anime\`), or run \`${prefix}help <command>\`.`)
+                    .setDescription(`Here you can find a list of commands and how to use them.\n\nLuno's prefix, by default, is \`l.\`. Here, it's \`${prefix}\`.\n\nWhen viewing a command's syntax, a parameter/argument marked with <> means that it is required. [] shows that it is optional.\n\nGet more help on a command by sending it without any arguments (i.e. \`${prefix}anime\`), or run \`${prefix}help <command>\`.`)
                     .addField("Category", "What category would you like to view?\n:one: - Fun\n:two: - Utility\n:three: - Misc\n:four: - Developer\n:five: - Moderation\n:six: - Social\n:seven: - Leveling\n:eight: - Anime\n:nine: - **All**")
                     .setColor('6049e3')
                     .setFooter({text: "Luno | Will time out in 60 seconds."})

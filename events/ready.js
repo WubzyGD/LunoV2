@@ -11,7 +11,7 @@ const localXPCacheClean = require('../util/lxp/cacheloop');
 const monitorCacheClean = require('../util/monitorloop');
 const vcloop = require('../util/vcloop');
 
-let prefix = 'n?';
+let prefix = 'l.';
 
 module.exports = async client => {
 	if (client.misc.readied) {return;}

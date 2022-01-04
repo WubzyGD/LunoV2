@@ -35,11 +35,7 @@ module.exports = {
             else if (person.permissions.has("ADMINISTRATOR")) {infoembed.addField("Extra", "User is an admin! Watch out :eyes:");}
         }
 
-        if (tu) {
-            infoembed.addField('Luno Commands Executed', `${tu.commands}`)
-                .addField('Donator?', tu.developer ? `Well, ${name} makes me work, so they're a supporter in my book!` : tu.donator ? 'Yes! They have donated or supported me in the past!' : 'No', true)
-                .addField('Luno Staff Level', tu.developer ? 'Developer' : tu.admin ? 'Admin; Audit access to the bot' : tu.staff ? 'Staff; Support but with maintenance permissions' : tu.support ? 'Support; Answers tickets and help queries' : 'Member; Does not have a staff rank.', true);
-        }
+        if (tu) {infoembed.addField('Luno Commands Executed', `${tu.commands}`);}
         return message.channel.send({embeds: [infoembed]});
     }
 };

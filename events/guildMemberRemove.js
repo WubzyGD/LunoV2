@@ -13,4 +13,6 @@ module.exports = async (client, member) => {
     ) {
         try {member.guild.channels.cache.get(tg.lch).send(await sendResponse(member, member.guild.channels.cache.get(tg.lch), 'xdlol', client, tr.responses.get(tr.bindings.get('leave'))).catch(() => {})).catch(() => {});} catch {}
     }
+
+    client.user.setActivity(`over ${client.guilds.cache.get(client.misc.cf).members.cache.size} members!`, {type: "WATCHING"});
 };

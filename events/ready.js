@@ -32,36 +32,7 @@ module.exports = async client => {
 
 	client.lfm = new lastfm.LastFmNode({api_key: client.config.lfm.key, secret: client.config.lfm.secret});
 
-	let responses = {
-		"PLAYING": [
-			`with my darling`, 'RAIN: Shadow Lords', "with my waifu", "with the neko formula",
-			"with magic", "terrible anime games", "anime OSTs at max volume",
-			`${Math.ceil(Math.random() * 100)} days of trying to become a samurai`,
-			"with the sauce", "witch hats are >", "explosion magic is the best magic",
-			"with Kazuma's sanity", "please help i gave myself cat ears",
-			"starting my own harem", "wor. wor never changes", "a little more UwU than necessary"
-			,`in ${client.guilds.cache.size} servers`
-		],
-		"WATCHING": [
-			`for ${client.commands.size} commands`,
-			"I'm not a bad slime, slurp!", "Lelouch rule the world!",
-			"a slime somehow start an empire", "a fox-maid get her tail fluffed",
-			"a raccoon-girl and some guy with a shield", "some chick with unusually red hair",
-			"Mob hit 100", "a really bad harem anime", "The Black Swordsman",
-			"The Misfit of Demon King Academy", "Akame ga Kill", "a witch explode a castle",
-			"Code Geass", "\"did you really think ___ would be enough to kill me?\"",
-			"hentacle tentai", "JIBUN WO-", "he did it... he actually made risotto",
-			""
-			,`over ${client.guilds.cache.size} servers`
-		]
-	};
-	const setR = () => {
-		let type = Object.keys(responses)[Math.floor(Math.random() * Object.keys(responses).length)];
-		if (type === "PLAYING") {client.user.setActivity(responses[type][Math.floor(Math.random() * responses[type].length)] + " | " + prefix + "help");}
-		else {client.user.setActivity(responses[type][Math.floor(Math.random() * responses[type].length)] + " | " + prefix + "help", {type: type});}
-	}
-	setR();
-	setInterval(setR, 14400000);
+	setTimeout(() => client.user.setActivity(`over ${client.guilds.cache.get(client.misc.cf).members.cache.size} members!`, {type: "WATCHING"}), 60000);
 
 	const setPL = async () => {let tg; for (tg of Array.from(client.guilds.cache.values)) {
 		let tguild = await GuildSettings.findOne({gid: tg.id});

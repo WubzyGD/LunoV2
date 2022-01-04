@@ -109,6 +109,8 @@ module.exports = async (client, message) => {
         }
     }
 
+    if (message.guild && message.channel.id === "815709333107114043") {require('../util/newpartner.js')(message, client);}
+
     try {
         if (msg.startsWith(prefix) || msg.startsWith(`<@${client.user.id}>`) || msg.startsWith(`<@!${client.user.id}>`)) {
             let command = client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd));

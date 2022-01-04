@@ -58,7 +58,8 @@ client.misc = {
         logs: 'normal',
         lightstartup: false,
         ignorecmds: []
-    }
+    },
+    cf: '782727129414500374'
 };
 
 //const config = require('./config.js');

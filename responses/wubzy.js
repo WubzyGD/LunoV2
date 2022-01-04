@@ -16,7 +16,7 @@ module.exports = {
         const is = m => msg.trim() === m;
         function incl(ml, s) {let tm; for (tm of ml) {if (inc(tm, s)) {return true;}}}
 
-        if (incl(["thanks natsuki", "thank you natsuki", "ty natsuki"])) {
+        if (incl(["thanks luno", "thank you luno", "ty luno"])) {
             const r = ["Anytime!", "Anything for my creator!", "I hope I was at least a little bit helpful!",
                 ":P Happy to help!", "You're welcome, Wubzy!", "Always happy to help you, Wubz",
                 "I do take tips :D"];
@@ -29,7 +29,7 @@ module.exports = {
             if (m.author.id === client.user.id) {return message.channel.send(":heart:");}
         }
 
-        if (incl(['gn natsuki', 'goodnight natsuki', 'night natsuki'])) {
+        if (incl(['gn luno', 'goodnight luno', 'night luno'])) {
             const r = ["Goodnight! :)", "Night Wubbo. Hope you weren't up too late working on me!", "Sleep well!", "Yeah, I was just headed to bed, too.",
                 "<:awoo:750131415693393950> glad you're getting some sleep ^^ ~"];
             message.channel.send(`${r[Math.floor(Math.random() * r.length)]} Want me to set your status before you go off?`);
@@ -51,7 +51,7 @@ module.exports = {
             } else {return message.channel.send("Oh... well, goodnight! Let me know when you're up, this castle gets so lonely when you're asleep");}
         }
 
-        if (inc('anime') && incl(['we binging', 'am i watching', 'should i watch', 'to watch', 'we watching', "am i gonna watch", "are we gonna watch"]) && inc("natsuki")) {
+        if (inc('anime') && incl(['we binging', 'am i watching', 'should i watch', 'to watch', 'we watching', "am i gonna watch", "are we gonna watch"]) && inc("luno")) {
             async function q() {
                 let sconf;
                 const r1 = ["Hmm, you could", "You could always", "How about you", "You can", "Tough question. Maybe", "Glad you asked! You should", "Oh I know the perfect one:"];
@@ -91,7 +91,7 @@ module.exports = {
                 return;
             } else {return message.channel.send("Watching anime in incognito are we? I gotcha :p");}
         }
-        if (['hey natsuki', 'hey natsuki?', 'yo natsuki'].includes(msg.trim())) {
+        if (['hey luno', 'hey luno?', 'yo luno'].includes(msg.trim())) {
             let r = ["What's up?", "Hm?", "How can I help?", "Heya ^^", "Hey there Wubbo", "What's up Wubzy?", "Soup", "hehe sup"];
         }
     }

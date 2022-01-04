@@ -18,7 +18,7 @@ module.exports = {
             let category; for (category of Object.keys(sorted)) {
                 let categorySorted = [];
                 let current = 1;
-                let currentEmbed = new Discord.MessageEmbed().setAuthor({name: "Help Menu", iconURL: message.author.avatarURL()}).setTitle(category).setDescription("React to control the menu! You can also specify a command name when doing the help command to get more info about it.").setColor("c375f0");
+                let currentEmbed = new Discord.MessageEmbed().setAuthor({name: "Help Menu", iconURL: message.author.avatarURL()}).setTitle(category).setDescription("React to control the menu! You can also specify a command name when doing the help command to get more info about it.").setColor("6049e3");
                 let commands = Object.keys(sorted[category]);
                 let command; for (command of commands) {
                     let aliases = '';
@@ -29,7 +29,7 @@ module.exports = {
                     if (current === 5) {
                         categorySorted.push(currentEmbed);
                         current = 1;
-                        currentEmbed = new Discord.MessageEmbed().setAuthor({name: "Help Menu", iconURL: message.author.avatarURL()}).setTitle(category).setDescription("React to control the menu! You can also specify a command name when doing the help command to get more info about it.").setColor("c375f0");
+                        currentEmbed = new Discord.MessageEmbed().setAuthor({name: "Help Menu", iconURL: message.author.avatarURL()}).setTitle(category).setDescription("React to control the menu! You can also specify a command name when doing the help command to get more info about it.").setColor("6049e3");
                     }
                 }
                 if (current > 1) {categorySorted.push(currentEmbed);}
@@ -38,11 +38,11 @@ module.exports = {
 
             let cle = await message.channel.send({embeds: [
                 new Discord.MessageEmbed()
-                    .setTitle("Natsuki Help")
-                    .setDescription(`Here you can find a list of commands and how to use them.\n\nNatsuki's prefix, by default, is \`n?\`. Here, it's \`${prefix}\`.\n\nWhen viewing a command's syntax, a parameter/argument marked with <> means that it is required. [] shows that it is optional.\n\nGet more help on a command by sending it without any arguments (i.e. \`${prefix}anime\`), or run \`${prefix}help <command>\`.`)
+                    .setTitle("Luno Help")
+                    .setDescription(`Here you can find a list of commands and how to use them.\n\nLuno's prefix, by default, is \`n?\`. Here, it's \`${prefix}\`.\n\nWhen viewing a command's syntax, a parameter/argument marked with <> means that it is required. [] shows that it is optional.\n\nGet more help on a command by sending it without any arguments (i.e. \`${prefix}anime\`), or run \`${prefix}help <command>\`.`)
                     .addField("Category", "What category would you like to view?\n:one: - Fun\n:two: - Utility\n:three: - Misc\n:four: - Developer\n:five: - Moderation\n:six: - Social\n:seven: - Leveling\n:eight: - Anime\n:nine: - **All**")
-                    .setColor('c375f0')
-                    .setFooter({text: "Natsuki | Will time out in 60 seconds."})
+                    .setColor('6049e3')
+                    .setFooter({text: "Luno | Will time out in 60 seconds."})
                     .setThumbnail(client.user.avatarURL({size: 2048}))
                     .setTimestamp()
             ]});
@@ -100,7 +100,7 @@ module.exports = {
             if (pages.length > 1) {
                 let help = new Pagination(message.channel, pages, message, client, true);
                 return await help.start({endTime: 60000, user: message.author.id}).catch(() => {});
-            } else {return message.channel.send({embeds: [pages[0].setFooter({text: "Natsuki", iconURL: client.user.avatarURL()}).setTimestamp()]}).catch(() => {});}
+            } else {return message.channel.send({embeds: [pages[0].setFooter({text: "Luno", iconURL: client.user.avatarURL()}).setTimestamp()]}).catch(() => {});}
         } else {
             let command;
             if (client.commands.has(args[0])) {command = client.commands.get(args[0]);}
@@ -109,7 +109,7 @@ module.exports = {
 
             return message.reply(command.help
                 ? command.help instanceof Discord.MessageEmbed
-                    ? {embeds: [command.help.setFooter({text: "Natsuki | <required> [optional]", iconURL: client.user.avatarURL()}).setColor("c375f0").setTimestamp()]}
+                    ? {embeds: [command.help.setFooter({text: "Luno | <required> [optional]", iconURL: client.user.avatarURL()}).setColor("6049e3").setTimestamp()]}
                     : command.help.replace(/{{p}}/g, prefix)
                 : "I don't seem to have any help info available for that command."
             );

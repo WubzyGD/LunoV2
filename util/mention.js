@@ -16,7 +16,7 @@ module.exports = async(message, msg, args, cmd, prefix, mention, client) => {
             new Discord.MessageEmbed()
                 .setAuthor({name: mention.tag, iconURL: mention.avatarURL()})
                 .setDescription(`That user ${tu.statustype === 'dnd' ? 'wishes not to be disturbed' : 'is AFK'}. Reason: ${tu.statusmsg}.${tu.statussetat ? `\n\n(This status was set ${moment(tu.statussetat.getTime()).fromNow()})` : ''}`)
-                .setColor('c375f0')
+                .setColor('6049e3')
             ]
         });
         await require('../util/wait')(10000);

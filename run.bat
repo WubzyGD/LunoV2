@@ -1,4 +1,4 @@
-title Natsuki
+title Luno
 node bot.js
-title !!CRASH Natsuki
+title !!CRASH Luno
 pause

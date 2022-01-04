@@ -70,9 +70,9 @@ module.exports = {
                     .setDescription(`For **${ch.name}** | \`${ch.id}\``)
                     .addField("Name", nn)
                     .setThumbnail(ch.thumbnail)
-                    .setColor('c375f0')
+                    .setColor('6049e3')
                     .setTimestamp()
-                    .setFooter({text: "Natsuki"})
+                    .setFooter({text: "Luno"})
             ], content: queue ? '<@330547934951112705>' : undefined
         }).catch(() => {})).catch(() => {});
         return message.channel.send(`Anime alt name ${queue ? "submitted" : "added"}.`);

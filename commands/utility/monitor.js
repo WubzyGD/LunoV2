@@ -57,8 +57,8 @@ module.exports = {
             .setTitle(`Activity stats for ${message.guild.name}`)
             .setThumbnail(message.guild.iconURL({size: 1024}))
             .setDescription("*These statistics have an accuracy of about 10 minutes.*")
-            .setColor('c375f0')
-            .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+            .setColor('6049e3')
+            .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
             .setTimestamp();
 
             if (thm) {emb.addField("Top Channels", chs).addField("Top Members", us);}

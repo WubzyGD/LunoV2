@@ -30,8 +30,8 @@ module.exports = {
                 .setTitle("Join Role Updated")
                 .setThumbnail(message.author.avatarURL({size: 2048}))
                 .setDescription(`Role: ${tg.joinrole.length ? `<@&${tg.joinrole}>` : "None"}`)
-                .setColor("c375f0")
-                .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+                .setColor("6049e3")
+                .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
                 .setTimestamp()
             );
         }

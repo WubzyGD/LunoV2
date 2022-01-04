@@ -67,8 +67,8 @@ module.exports = {
                 .setDescription(`Requested by ${message.member.displayName}`)
                 .addField("Name/ID", args[1].toLowerCase(), true)
                 .addField("Type", tr.responses.get(args[1].toLowerCase()).embed ? "Embed" : "Message", true)
-                .setColor('c375f0')
-                .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+                .setColor('6049e3')
+                .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
                 .setTimestamp();
             if (hasBinding) {infoEmbed.addField("Server Bindings", bm);}
             return message.channel.send({embeds: [infoEmbed]});

@@ -40,8 +40,8 @@ module.exports = {
             .setDescription(`New prefix: \`${np}\``)
             .addField('Auditing Admin', `<@${message.member.id}>`, true)
             .addField("Notice", "Prefixes are cached, and may take up to a minute to update.")
-            .setColor('c375f0')
-            .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+            .setColor('6049e3')
+            .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
             .setTimestamp()
         ]});
     }

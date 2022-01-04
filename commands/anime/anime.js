@@ -31,7 +31,7 @@ module.exports = {
         if (['a', 'add', 'n', 'new'].includes(args[0].trim().toLowerCase())) {
             let tu = await UserData.findOne({uid: message.author.id});
             if (!tu || !tu.staff) {
-                await message.channel.send("Since you aren't a Natsuki Staff member, this anime will be __submitted__ for reviewal!");
+                await message.channel.send("Since you aren't a Luno Staff member, this anime will be __submitted__ for reviewal!");
                 queue = true;
             }
             options = new TagFilter([
@@ -156,9 +156,9 @@ module.exports = {
                 .addField('Length', `**# of Seasons:** ${options.seasons}\n**# of Episodes:** ${options.episodes}`)
                 .addField('Airing', `**Began:** ${options.airStartDate}\n**Ended:** ${options.isComplete ? options.airEndDate : 'This anime is still airing!'}`)
                 .addField('Other', `**Genre(s):** ${foptions.genres}\n**Tags:** ${foptions.tags}\n**Characters:** ${foptions.characters}\n**Stream this at:** ${foptions.streamAt}`)
-                .setColor("c375f0")
+                .setColor("6049e3")
                 .setImage(options.thumbnail)
-                .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+                .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
                 .setTimestamp();
             try {
                 am = await dmch.send({embeds: [amEmbed]});
@@ -229,7 +229,7 @@ module.exports = {
         
         if (['reject'].includes(args[0].trim().toLowerCase())) {
             let tu = await UserData.findOne({uid: message.author.id});
-            if (!tu || !tu.staff) {await message.channel.send("Since you aren't a Natsuki Staff member, you can't reject anime submissions!");}
+            if (!tu || !tu.staff) {await message.channel.send("Since you aren't a Luno Staff member, you can't reject anime submissions!");}
             let tr = await AniData.findOne({id: args[1].toLowerCase()});
             if (!tr) {return message.reply("That anime submission doesn't seem to exist!");}
             if (tr.queued !== true) {return message.reply("That anime was already accepted, so you can't reject it.");}
@@ -336,9 +336,9 @@ module.exports = {
                         .setDescription(`For **${ch.name}** | \`${ch.id}\``)
                         .addField("Name", nn)
                         .setThumbnail(ch.thumbnail)
-                        .setColor('c375f0')
+                        .setColor('6049e3')
                         .setTimestamp()
-                        .setFooter({text: "Natsuki"})
+                        .setFooter({text: "Luno"})
                 ], content: queue ? '<@330547934951112705>' : undefined
             }).catch(() => {})).catch(() => {});
             return message.channel.send(`Anime alt name ${queue ? "submitted" : "added"}.`);
@@ -389,7 +389,7 @@ module.exports = {
                 let pages = ch.images.map(im => new Discord.MessageEmbed()
                     .setTitle(ch.name)
                     .setDescription(`**Name:** ${ch.name}`)
-                    .setColor("c375f0")
+                    .setColor("6049e3")
                     .setImage(im)
                 );
                 if (pages.length > 1) {
@@ -427,9 +427,9 @@ module.exports = {
                                 .setDescription(`For **${ch.name}**`)
                                 .setThumbnail(ch.thumbnail)
                                 .setImage(img)
-                                .setColor('c375f0')
+                                .setColor('6049e3')
                                 .setTimestamp()
-                                .setFooter({text: "Natsuki"})
+                                .setFooter({text: "Luno"})
                         ], content: queue ? '<@330547934951112705>' : undefined
                     }).catch(() => {})).catch(() => {});
                     return message.channel.send(`Anime image ${queue ? "submitted" : "added"} to **${ch.name}**.`);
@@ -447,9 +447,9 @@ module.exports = {
                                 .setDescription(`For **${ch.name}**`)
                                 .addField("Images", images.map(img => `${img}\n`).join(""))
                                 .setThumbnail(ch.thumbnail)
-                                .setColor('c375f0')
+                                .setColor('6049e3')
                                 .setTimestamp()
-                                .setFooter({text: "Natsuki"})
+                                .setFooter({text: "Luno"})
                         ], content: queue ? '<@330547934951112705>' : undefined
                     }).catch(() => {})).catch(() => {});
                     return message.channel.send(`Anime images (${images.length}) ${queue ? "submitted" : "added"} to **${ch.name}**.`);

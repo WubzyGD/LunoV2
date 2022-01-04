@@ -26,7 +26,7 @@ module.exports = {
         .addField("Name", message.guild.name, true)
         .addField("Admin", message.author.username, true)
         .setColor("e8da3a")
-        .setFooter({text: "Natsuki"})
+        .setFooter({text: "Luno"})
         .setTimestamp();
 
         if (['add', 'a', 'make', 'm'].includes(args[0])) {

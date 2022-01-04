@@ -1,16 +1,16 @@
-# Natsuki
+# Luno
 
-The official repository of Natsuki the Discord Bot.
+The official repository of Luno the Discord Bot.
 
 Developed solely by WubzyGD, and intended to help others learn the ropes of discord.js, as well as provide some useful utilities to make the troubles of bot development just a little easier.
 
-Skip down to [**Open-Source**](https://github.com/NatsukiDev/Natsuki#open-source) if you wanna get straight to ~~robbing me~~ seeing some of the awesome stuff Natsuki has to offer.
+Skip down to [**Open-Source**](https://github.com/LunoDev/Luno#open-source) if you wanna get straight to ~~robbing me~~ seeing some of the awesome stuff Luno has to offer.
 
-> Natsuki is now also on Discord.js' latest update, v13!
+> Luno is now also on Discord.js' latest update, v13!
 
 ## Features
 
-Natsuki is an anime-focused Discord bot with more than her fair share of features.
+Luno is an anime-focused Discord bot with more than her fair share of features.
 
 She features lots of different focuses in her commands, as well as:
 - **99.99%** uptime over her year of life
@@ -19,7 +19,7 @@ She features lots of different focuses in her commands, as well as:
 
 > *Oh yeah, and a developer with no life, so she's always being updated*
 
-Natsuki's commands and abilities include, but are absolutely not limited to:
+Luno's commands and abilities include, but are absolutely not limited to:
 
 ### Moderation
 
@@ -72,9 +72,9 @@ Natsuki's commands and abilities include, but are absolutely not limited to:
 
 > *Can I self-host Natuski?*
 
-Natsuki is not meant to be self-hosted. I suppose she is indeed open-source, so if you knew what you were doing, you could build her and self-host her, but I don't condone it.
+Luno is not meant to be self-hosted. I suppose she is indeed open-source, so if you knew what you were doing, you could build her and self-host her, but I don't condone it.
 
-> *Can I copy Natsuki's code?*
+> *Can I copy Luno's code?*
 
 Natuski's utilities (see below) are meant to be downloaded and copied, and some of her frameworking like command handlers are great for copying, but the point of her open-sourcing is not for you to rip apart every command and event. It's primarily for you to make use of the utilities and use the rest as a learning tool to reference and take example from.
 
@@ -82,7 +82,7 @@ Do note that **all** Discord bot lists **do not** allow *any* copying or forking
 
 Bottom line, take what you want, but know that taking too much is not my intention and will hinder your bot's growth.
 
-> *Can I help develop for Natsuki?*
+> *Can I help develop for Luno?*
 
 Well gee, I thought you'd never ask! Yes! Simply make changes and submit them as a Pull Request.
 
@@ -179,7 +179,7 @@ await help.start({
 
 _Please note that the Pagination class is still in the works. Only one bug is currently known, and it's that the Pagination will error when a user tries to end the pagination in a DM channel, but this error is not extremely high-level and shouldn't have any major effects on your node process._
 
-_Another note: you'll want to go into the pagination.js file and search for .setFooter() and change the name Natsuki to whatever name your bot is_
+_Another note: you'll want to go into the pagination.js file and search for .setFooter() and change the name Luno to whatever name your bot is_
 
 ### Clean Timeout
 

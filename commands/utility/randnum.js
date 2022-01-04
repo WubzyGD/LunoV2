@@ -43,8 +43,8 @@ module.exports = {
         return message.channel.send({embeds: [new Discord.MessageEmbed()
             .setTitle(`Random Number${num.length === 1 ? '' : 's'}`)
             .setDescription(res)
-            .setColor('c375f0')
-            .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+            .setColor('6049e3')
+            .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
             .setTimestamp()
         ]});
     }

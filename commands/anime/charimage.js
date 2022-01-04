@@ -19,7 +19,7 @@ module.exports = {
     help: new Discord.MessageEmbed()
         .setTitle("Help -> Character Images")
         .setDescription("Add an image to a character, or list the characters' images.")
-        .addField("Notice", "If you're not a member of Natsuki staff, this image will be submitted for reviewal.")
+        .addField("Notice", "If you're not a member of Luno staff, this image will be submitted for reviewal.")
         .addField("Syntax", "`charimage <character> <imageURL|attachedImage>` or `charimage <list> <character>`"),
     async execute(message, msg, args, cmd, prefix, mention, client) {
         let list = false;
@@ -64,7 +64,7 @@ module.exports = {
                 .setTitle(ch.name)
                 .setDescription(`**Name:** ${ch.name}`)
                 .addField('Other', `**Anime**: ${client.misc.cache.animeID.get(ch.anime)}\n\n**Gender**: ${ch.gender}\n`)
-                .setColor("c375f0")
+                .setColor("6049e3")
                 .setImage(im)
             );
             if (pages.length > 1) {
@@ -102,9 +102,9 @@ module.exports = {
                             .setDescription(`For **${ch.name}** | \`${ch.id}\` from ${client.misc.cache.animeID.get(ch.anime)}`)
                             .setThumbnail(ch.thumbnail)
                             .setImage(img)
-                            .setColor('c375f0')
+                            .setColor('6049e3')
                             .setTimestamp()
-                            .setFooter({text: "Natsuki"})
+                            .setFooter({text: "Luno"})
                     ], content: queue ? '<@330547934951112705>' : undefined
                 }).catch(() => {})).catch(() => {});
                 return message.channel.send(`Character image ${queue ? "submitted" : "added"} to **${ch.name}**.`);
@@ -122,9 +122,9 @@ module.exports = {
                             .setDescription(`For **${ch.name}** | \`${ch.id}\` from ${client.misc.cache.animeID.get(ch.anime)}`)
                             .addField("Images", images.map(img => `${img}\n`).join(""))
                             .setThumbnail(ch.thumbnail)
-                            .setColor('c375f0')
+                            .setColor('6049e3')
                             .setTimestamp()
-                            .setFooter({text: "Natsuki"})
+                            .setFooter({text: "Luno"})
                     ], content: queue ? '<@330547934951112705>' : undefined
                 }).catch(() => {})).catch(() => {});
                 return message.channel.send(`Character images (${images.length}) ${queue ? "submitted" : "added"} to **${ch.name}**.`);

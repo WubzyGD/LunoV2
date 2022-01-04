@@ -18,8 +18,8 @@ module.exports = {
     },
     help: new Discord.MessageEmbed()
         .setTitle("Help -> Char Nickname Adding")
-        .setDescription("Add a nickname to a character with this command. You will need to specify the name of the character first, then send the message, and after that, Natsuki will ask you for the nickname to add.")
-        .addField("Notice", "This nickname will be submitted unless you are a member of Natsuki staff.")
+        .setDescription("Add a nickname to a character with this command. You will need to specify the name of the character first, then send the message, and after that, Luno will ask you for the nickname to add.")
+        .addField("Notice", "This nickname will be submitted unless you are a member of Luno staff.")
         .addField("Syntax", "`charnick <charName>`"),
     async execute(message, msg, args, cmd, prefix, mention, client) {
         if (!args[0]) {
@@ -69,9 +69,9 @@ module.exports = {
                     .setDescription(`For **${ch.name}** | \`${ch.id}\` from ${client.misc.cache.animeID.get(ch.anime)}`)
                     .addField("Name", nn)
                     .setThumbnail(ch.thumbnail)
-                    .setColor('c375f0')
+                    .setColor('6049e3')
                     .setTimestamp()
-                    .setFooter({text: "Natsuki"})
+                    .setFooter({text: "Luno"})
             ], content: queue ? '<@330547934951112705>' : undefined
         }).catch(() => {})).catch(() => {});
         return message.channel.send(`Character nickname ${queue ? "submitted" : "added"}.`);

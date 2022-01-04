@@ -38,14 +38,14 @@ module.exports = {
                     })
                     .setTitle("Finished Anime List")
                     .setDescription(s)
-                    .setColor('c375f0')
+                    .setColor('6049e3')
                     .setTimestamp()
                 );
             }
             if (pages.length > 1) {
                 let pag = new Pagination(message.channel, pages, message, client, true);
                 return await pag.start({user: message.author.id, time: 60000});
-            } else {return message.channel.send({embeds: [pages[0].setFooter({text: "Natsuki"})]});}
+            } else {return message.channel.send({embeds: [pages[0].setFooter({text: "Luno"})]});}
         }
 
         if (!args[0]) {

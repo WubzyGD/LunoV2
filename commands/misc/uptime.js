@@ -20,8 +20,8 @@ module.exports = {
         return message.channel.send({embeds: [new Discord.MessageEmbed()
             .setTitle("Uptime")
             .setDescription(`${moment.preciseDiff(moment(bot.lastRestart), moment())}`)
-            .setColor('c375f0')
-            .setFooter({text: "Natsuki"})
+            .setColor('6049e3')
+            .setFooter({text: "Luno"})
             .setTimestamp()
         ]})
     }

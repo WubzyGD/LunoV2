@@ -5,7 +5,7 @@ module.exports = {
     aliases: ['wlb', 'watchleaderboard', 'watchedlb', 'finishedleaderboard', 'flb', 'finishlb', 'finishleaderboard'],
     meta: {
         category: 'Anime',
-        description: "Find out the most watched anime across Natsuki's users!",
+        description: "Find out the most watched anime across Luno's users!",
         syntax: '`watchedlb`',
         extra: null
     },
@@ -21,8 +21,8 @@ module.exports = {
                     .slice(0, 10)
                     .map((c, i) => `${i+1}. **${client.misc.cache.animeLove.get(c)} watcher${client.misc.cache.animeLove.get(c) === 1 ? '' : 's'}** -> ${client.misc.cache.animeID.get(c)}`)
                     .join('\n')
-                ).setColor('c375f0')
-                .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+                ).setColor('6049e3')
+                .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
                 .setTimestamp()
         ]});
     }

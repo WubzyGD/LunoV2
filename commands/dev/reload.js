@@ -12,7 +12,7 @@ module.exports = {
         .setTitle("Help -> System Reloading")
         .setDescription("Reloads the system extensions by refreshing all command and event files into client without terminating the node process. *Hi I'm Wubzy and this makes no sense to anyone but discord.js devs because we're nerds*")
         .addField("Syntax", "`refresh [log]`. Adding 'log' will log to the console as though the bot were in startup.")
-        .addField("Notice", "This command is only available to Natsuki developers."),
+        .addField("Notice", "This command is only available to Luno developers."),
     meta: {
         category: 'Developer',
         description: "Refresh all client commands and events and clear most of the require cache. Only two people can use this command and they're probably not you.",
@@ -21,7 +21,7 @@ module.exports = {
     },
     async execute(message, msg, args, cmd, prefix, mention, client) {
         const tu = await UserData.findOne({uid: message.author.id});
-        if (!tu || !tu.developer) {return message.channel.send("You must be a Natsuki developer in order to do this!");}
+        if (!tu || !tu.developer) {return message.channel.send("You must be a Luno developer in order to do this!");}
 
         if (!args.length) {
             let timer = new Date().getTime();

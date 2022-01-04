@@ -48,8 +48,8 @@ module.exports = {
                         .setTitle("Chest Spawning Enabled!")
                         .setThumbnail(message.guild.iconURL({size: 2048}))
                         .setDescription(`Your server now has its chest spawning enabled! Chests will spawn in ${chestCh.length ? `<#${chestCh}>` : 'any channel'}.`)
-                        .setColor("c375f0")
-                        .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+                        .setColor("6049e3")
+                        .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
                         .setTimestamp()
                     ]});
                 });

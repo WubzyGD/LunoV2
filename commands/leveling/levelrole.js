@@ -63,8 +63,8 @@ module.exports = {
                 .setTitle("Server Leveling Roles")
                 .setThumbnail(message.guild.iconURL({size: 2048}))
                 .setDescription(s)
-                .setColor('c375f0')
-                .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+                .setColor('6049e3')
+                .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
                 .setTimestamp()
             ]});
         }

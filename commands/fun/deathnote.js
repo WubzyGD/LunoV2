@@ -106,8 +106,8 @@ module.exports = {
 
         let note = await message.channel.send({embeds: [new Discord.MessageEmbed()
             .setDescription(pretext)
-            .setColor('c375f0')
-            .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+            .setColor('6049e3')
+            .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
             .setTimestamp()
         ]});
 
@@ -133,8 +133,8 @@ module.exports = {
         let finalEmbed = new Discord.MessageEmbed()
         .setAuthor({name: title, iconURL: message.author.avatarURL()})
         .setDescription(`${text}${dns ? `\n\n_Their name is in your deathnote **${dns.against[mention.id] === 1 ? 'once' : `${dns.against[mention.id]} times`}.**_` : ''}`)
-        .setColor('c375f0')
-        .setFooter({text: `Natsuki${dns ? ` | ${dns.total} name${dns.total === 1 ? ' has been' : 's'} written in your deathnote!` : ''}`})
+        .setColor('6049e3')
+        .setFooter({text: `Luno${dns ? ` | ${dns.total} name${dns.total === 1 ? ' has been' : 's'} written in your deathnote!` : ''}`})
         .setTimestamp();
 
         if (mention) {finalEmbed.setThumbnail(mention.avatarURL({size: 1024}));}

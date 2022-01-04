@@ -24,8 +24,8 @@ module.exports = {
             .setThumbnail(client.users.cache.get(person.id).avatarURL({size: 2048}))
             .addField("Account Created", `${moment(client.users.cache.get(person.id).createdAt).fromNow()}`, true)
             .addField("Bot User?", client.users.cache.get(person.id).bot ? "Is a bot" : "Is not a bot", true)
-            .setColor('c375f0')
-            .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+            .setColor('6049e3')
+            .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
             .setTimestamp();
 
         if (message.guild) {
@@ -36,9 +36,9 @@ module.exports = {
         }
 
         if (tu) {
-            infoembed.addField('Natsuki Commands Executed', `${tu.commands}`)
+            infoembed.addField('Luno Commands Executed', `${tu.commands}`)
                 .addField('Donator?', tu.developer ? `Well, ${name} makes me work, so they're a supporter in my book!` : tu.donator ? 'Yes! They have donated or supported me in the past!' : 'No', true)
-                .addField('Natsuki Staff Level', tu.developer ? 'Developer' : tu.admin ? 'Admin; Audit access to the bot' : tu.staff ? 'Staff; Support but with maintenance permissions' : tu.support ? 'Support; Answers tickets and help queries' : 'Member; Does not have a staff rank.', true);
+                .addField('Luno Staff Level', tu.developer ? 'Developer' : tu.admin ? 'Admin; Audit access to the bot' : tu.staff ? 'Staff; Support but with maintenance permissions' : tu.support ? 'Support; Answers tickets and help queries' : 'Member; Does not have a staff rank.', true);
         }
         return message.channel.send({embeds: [infoembed]});
     }

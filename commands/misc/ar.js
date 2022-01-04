@@ -45,7 +45,7 @@ module.exports = {
                     pages.push(new Discord.MessageEmbed()
                         .setTitle(`Auto-Responses in this Server`)
                         .setDescription(s)
-                        .setColor('c375f0')
+                        .setColor('6049e3')
                         .setTimestamp()
                     );
                     if (cond) {break;}
@@ -71,8 +71,8 @@ module.exports = {
                     let embed = new Discord.MessageEmbed()
                         .setTitle("Auto-Responses in this Server")
                         .setDescription(string)
-                        .setColor('c375f0')
-                        .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+                        .setColor('6049e3')
+                        .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
                         .setTimestamp();
                     if (mode) {embed.addField(mode === 'edit' ? "Editing" : 'Deletion', `Please say the **number** of the AR you wish to ${mode}.`);}
                     let r = await message.channel.send({embeds: [embed]});

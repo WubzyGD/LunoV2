@@ -16,8 +16,8 @@ module.exports = {
         let ce = new Discord.MessageEmbed()
             .setTitle("Commands")
             .setDescription(`You can use \`${prefix}help\` on any command to get more help on it.`)
-            .setColor('c375f0')
-            .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+            .setColor('6049e3')
+            .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
             .setTimestamp();
         categories.forEach(category => ce.addField(category, Array.from(client.commands.values()).filter(command => command.meta ? command.meta.category === category : category === "Uncategorized").map(cmd => `\`${cmd.name}\``).join(', ')));
         return message.channel.send({embeds: [ce]});

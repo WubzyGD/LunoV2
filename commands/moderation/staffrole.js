@@ -46,8 +46,8 @@ module.exports = {
                 .setDescription(`<@&${tguild.staffrole}> can now edit my settings in this server.`)
                 .addField('Auditing Admin', `<@${message.member.id}>`, true)
                 .addField('Role-Holders', `${message.guild.members.cache.filter(m => m.roles.cache.has(tguild.staffrole) && !client.users.cache.get(m.id).bot).size}+ members have this role`, true)
-                .setColor('c375f0')
-                .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+                .setColor('6049e3')
+                .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
                 .setTimestamp()
             ]});
         }

@@ -35,7 +35,7 @@ module.exports = {
         if (['a', 'add', 'n', 'new'].includes(args[0])) {
             let tu = await UserData.findOne({uid: message.author.id});
             if (!tu || !tu.staff) {
-                await message.channel.send("Since you aren't a Natsuki Staff member, this character will be __submitted__ for reviewal!");
+                await message.channel.send("Since you aren't a Luno Staff member, this character will be __submitted__ for reviewal!");
                 queue = true;
             }
             options = new TagFilter([
@@ -187,9 +187,9 @@ module.exports = {
                 .setDescription(`${queue ? 'Requested' : 'Added'} by ${message.author.tag}`)
                 .addField('Info', `**Name:** ${options.name}`)
                 .addField('Other', `**Anime**: ${forceAni ? options.anime : `${aniData.name} | ${aniData.japname} | \`${aniData.id}\``}\n\n**Gender**: ${options.gender}\n`)
-                .setColor("c375f0")
+                .setColor("6049e3")
                 .setImage(options.thumbnail)
-                .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+                .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
                 .setTimestamp();
             try {
                 am = await dmch.send({embeds: [amEmbed]});
@@ -265,7 +265,7 @@ module.exports = {
 
         if (['reject'].includes(args[0].trim().toLowerCase())) {
             let tu = await UserData.findOne({uid: message.author.id});
-            if (!tu || !tu.staff) {await message.channel.send("Since you aren't a Natsuki Staff member, you can't reject character submissions!");}
+            if (!tu || !tu.staff) {await message.channel.send("Since you aren't a Luno Staff member, you can't reject character submissions!");}
             let tr = await CharData.findOne({id: args[1].toLowerCase()});
             if (!tr) {return message.reply("That character submission doesn't seem to exist!");}
             if (tr.queued !== true) {return message.reply("That character was already accepted, so you can't reject it.");}
@@ -333,8 +333,8 @@ module.exports = {
                 new Discord.MessageEmbed()
                     .setAuthor({name: `${n}${n.endsWith('s') ? '' : "'s"} Favorited Characters`, iconURL: mention ? mention.avatarURL() : message.author.avatarURL()})
                     .setDescription(`**${chars.length} character${chars.length === 1 ? '': 's'} favorited**\n\n${chars.join(", ")}`)
-                    .setColor('c375f0')
-                    .setFooter({text: "Natsuki"})
+                    .setColor('6049e3')
+                    .setFooter({text: "Luno"})
                     .setTimestamp()
             ]});
         }
@@ -383,7 +383,7 @@ module.exports = {
                     .setTitle(ch.name)
                     .setDescription(`**Name:** ${ch.name}`)
                     .addField('Other', `**Anime**: ${client.misc.cache.animeID.get(ch.anime)}\n\n**Gender**: ${ch.gender}\n`)
-                    .setColor("c375f0")
+                    .setColor("6049e3")
                     .setImage(im)
                 );
                 if (pages.length > 1) {
@@ -421,9 +421,9 @@ module.exports = {
                                 .setDescription(`For **${ch.name}** | \`${ch.id}\` from ${client.misc.cache.animeID.get(ch.anime)}`)
                                 .setThumbnail(ch.thumbnail)
                                 .setImage(img)
-                                .setColor('c375f0')
+                                .setColor('6049e3')
                                 .setTimestamp()
-                                .setFooter({text: "Natsuki"})
+                                .setFooter({text: "Luno"})
                         ], content: queue ? '<@330547934951112705>' : undefined
                     }).catch(() => {})).catch(() => {});
                     return message.channel.send(`Character image ${queue ? "submitted" : "added"} to **${ch.name}**.`);
@@ -441,9 +441,9 @@ module.exports = {
                                 .setDescription(`For **${ch.name}** | \`${ch.id}\` from ${client.misc.cache.animeID.get(ch.anime)}`)
                                 .addField("Images", images.map(img => `${img}\n`).join(""))
                                 .setThumbnail(ch.thumbnail)
-                                .setColor('c375f0')
+                                .setColor('6049e3')
                                 .setTimestamp()
-                                .setFooter({text: "Natsuki"})
+                                .setFooter({text: "Luno"})
                         ], content: queue ? '<@330547934951112705>' : undefined
                     }).catch(() => {})).catch(() => {});
                     return message.channel.send(`Character images (${images.length}) ${queue ? "submitted" : "added"} to **${ch.name}**.`);
@@ -489,10 +489,10 @@ module.exports = {
                     .setTitle(ch.name)
                     .setDescription(`**Name:** ${ch.name}`)
                     .addField('Other', `**Anime**: ${`${anime.name} | ${anime.japname} | \`${anime.id}\``}\n\n**Gender**: ${ch.gender}\n`)
-                    .addField("Loved by", `**${ch.loved}** Natsuki user${ch.loved === 1 ? '' : 's'}!\n\`${prefix}char love ${ch.name}\``)
-                    .setColor("c375f0")
+                    .addField("Loved by", `**${ch.loved}** Luno user${ch.loved === 1 ? '' : 's'}!\n\`${prefix}char love ${ch.name}\``)
+                    .setColor("6049e3")
                     .setImage(ch.thumbnail)
-                    .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+                    .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
                     .setTimestamp()
                 ));
                 let pag = new Pagination(message.channel, pages, message, client, true);
@@ -503,7 +503,7 @@ module.exports = {
                         .setTitle(`${anime.name}: Characters`)
                         .setThumbnail(anime.thumbnail)
                         .setDescription(anime.characters.map(ch => client.misc.cache.charsID.get(ch)).join(", "))
-                        .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+                        .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
                         .setTimestamp()
                 ]});
             }
@@ -558,9 +558,9 @@ module.exports = {
                         .setDescription(`For **${ch.name}** | \`${ch.id}\` from ${client.misc.cache.animeID.get(ch.anime)}`)
                         .addField("Name", nn)
                         .setThumbnail(ch.thumbnail)
-                        .setColor('c375f0')
+                        .setColor('6049e3')
                         .setTimestamp()
-                        .setFooter({text: "Natsuki"})
+                        .setFooter({text: "Luno"})
                 ], content: queue ? '<@330547934951112705>' : undefined
             }).catch(() => {})).catch(() => {});
             return message.channel.send(`Character nickname ${queue ? "submitted" : "added"}.`);

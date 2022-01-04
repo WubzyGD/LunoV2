@@ -49,7 +49,7 @@ module.exports = {
             let notes = await ask(mesg, "Are there any other notes you'd like to add? If not, just write N/A or something of that nature.", 360000, true); if (!ask) {return clearDM();}
             if (notes.length > 500) {clearDM(); return dmch.send("Let's keep it under 500 characters, please.");}
 
-            let fconf = await ask(mesg, "Would you like to continue and create the secret santa? By doing so, you agree that:\n-Natsuki and its developers are not responsible for anything financially-related to your secret santa\n-Anyone with your join code can join the secret santa\n-You are responsible for notifying your members of any changes or updates.\n-I am not responsible for any eggnog that may or may not be stolen from you by Wubzy. *for legal reasons this is a joke*\n\n-The answers you have submitted are what you want to use, as they cannot be changed.", 120000, true); if (!fconf) {return clearDM();}
+            let fconf = await ask(mesg, "Would you like to continue and create the secret santa? By doing so, you agree that:\n-Luno and its developers are not responsible for anything financially-related to your secret santa\n-Anyone with your join code can join the secret santa\n-You are responsible for notifying your members of any changes or updates.\n-I am not responsible for any eggnog that may or may not be stolen from you by Wubzy. *for legal reasons this is a joke*\n\n-The answers you have submitted are what you want to use, as they cannot be changed.", 120000, true); if (!fconf) {return clearDM();}
             if (['n', 'no'].includes(conf.trim().toLowerCase())) {clearDM(); return dmch.send("Oh, yikes. Is it about the eggnog? Sorry about that hehe...");}
             if (!['yes', 'ye', 'y', 'sure'].includes(conf.trim().toLowerCase())) {clearDM(); return dmch.send("Please specify yes or no you weeb!");}
 
@@ -82,7 +82,7 @@ module.exports = {
                 .addField("ID", `\`${id}\``, true)
                 .addField("Owner", message.author.username, true)
                 .setColor("01bd2f")
-                .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+                .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
                 .setTimestamp()
             ]});
         }
@@ -117,7 +117,7 @@ module.exports = {
                 .addField("Owner", o.username, true)
                 .addField("Members", `${tss.members ? tss.members.length : 0}`, true)
                 .setColor("01bd2f")
-                .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+                .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
                 .setTimestamp()
             ]});
 
@@ -128,7 +128,7 @@ module.exports = {
             let info = await ask(mesg, tss.info, 600000, true); if (!info) {return clearDM();}
             if (info.length > 750) {clearDM(); return dmch.send("Let's keep that under 750 characters. No need to put your entire Christmas list on there :smirk:");}
 
-            let conf = await ask(mesg, "Before we finish, do you agree to the following things:\n-I, Natsuki, and my developers, are not responsible for anything financially-related to your Secret Santa\n-You should contact the host if you have questions\n-These answers you gave are final and will be seen by the person who draws you.\n-You *need* to have your DMs open so that I can reach you when drawing time comes!", 120000, true);
+            let conf = await ask(mesg, "Before we finish, do you agree to the following things:\n-I, Luno, and my developers, are not responsible for anything financially-related to your Secret Santa\n-You should contact the host if you have questions\n-These answers you gave are final and will be seen by the person who draws you.\n-You *need* to have your DMs open so that I can reach you when drawing time comes!", 120000, true);
             if (['n', 'no'].includes(conf.trim().toLowerCase())) {clearDM(); return dmch.send("Alrighty! I've discarded your responses :P");}
             if (!['yes', 'ye', 'y', 'sure'].includes(conf.trim().toLowerCase())) {clearDM(); return dmch.send("Please specify yes or no you weeb!");}
 

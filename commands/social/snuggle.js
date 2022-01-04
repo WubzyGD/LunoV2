@@ -24,8 +24,8 @@ module.exports = {
             .setTitle(`${message.guild ? message.member.displayName : message.author.username} needs a snuggle!`)
             .setThumbnail(message.author.avatarURL({size: 2048}))
             .setDescription(`Show them some love with \`${prefix}snuggle @${message.member.displayName}\`!`)
-            .setColor('c375f0')
-            .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+            .setColor('6049e3')
+            .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
             .setTimestamp()]}
             : "Sorry, but I'm a bot, and I can't snuggle you. Go into a server and ask for some snuggles!"
         );}
@@ -49,7 +49,7 @@ module.exports = {
         if (['s', 'save', 'n', 'new', 'a', 'add'].includes(args[0].toLowerCase())) {
             if (!args[1]) {return message.channel.send('oi there cunt, give me a link of an image to add!');}
             let tu = await UserData.findOne({uid: message.author.id});
-            if ((!tu || !tu.developer) && !client.misc.savers.includes(message.author.id)) {return message.reply("You must be a Natsuki Developer in order to add new snuggle GIFs.");}
+            if ((!tu || !tu.developer) && !client.misc.savers.includes(message.author.id)) {return message.reply("You must be a Luno Developer in order to add new snuggle GIFs.");}
             let e = true;
             let id;
             while (e === true) {id = makeId(6); if (!saves.has(id)) {e = false;}}

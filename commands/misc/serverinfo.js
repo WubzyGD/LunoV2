@@ -23,8 +23,8 @@ module.exports = {
             .addField("Channels", `${message.guild.channels.cache.size}\n[${message.guild.channels.cache.filter(ch => ch.type === "text").size} Text | ${message.guild.channels.cache.filter(ch => ch.type === "voice").size} Voice]`, true)
             .addField("Roles", `${message.guild.roles.cache.size} (you have ${message.member.roles.cache.size})\nYour highest is <@&${message.member.roles.highest.id}>`, true)
             .addField("Other Info", `Server created roughly **${moment(message.guild.createdAt).fromNow()}**\n\nYou joined ${moment(message.member.joinedAt).fromNow()} (Member for **${Math.round(((now.getTime() - new Date(message.member.joinedAt.getTime()).getTime()) / (new Date(message.guild.createdAt).getTime() - now.getTime())) * -100)}%** of server lifetime)`)
-            .setColor('c375f0')
-            .setFooter({text: "Natsuki"})
+            .setColor('6049e3')
+            .setFooter({text: "Luno"})
             .setTimestamp()
         ]});
     }

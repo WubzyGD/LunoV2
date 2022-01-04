@@ -5,7 +5,7 @@ module.exports = {
     aliases: ['chlb', 'charleaderboard', 'characterlb', 'characterleaderboard'],
     meta: {
         category: 'Anime',
-        description: "Find out the most loved characters across Natsuki's users!",
+        description: "Find out the most loved characters across Luno's users!",
         syntax: '`charlb`',
         extra: null
     },
@@ -21,8 +21,8 @@ module.exports = {
                     .slice(0, 10)
                     .map((c, i) => `${i+1}. **${client.misc.cache.charsLove.get(c)} vote${client.misc.cache.charsLove.get(c) === 1 ? '' : 's'}** -> ${client.misc.cache.charsID.get(c)}`)
                     .join('\n')
-                ).setColor('c375f0')
-                .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+                ).setColor('6049e3')
+                .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
                 .setTimestamp()
         ]});
     }

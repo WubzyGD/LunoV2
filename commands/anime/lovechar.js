@@ -31,8 +31,8 @@ module.exports = {
                 new Discord.MessageEmbed()
                     .setAuthor({name: `${n}${n.endsWith('s') ? '' : "'s"} Favorited Characters`, iconURL: mention ? mention.avatarURL() : message.author.avatarURL()})
                     .setDescription(`**${chars.length} character${chars.length === 1 ? '': 's'} favorited**\n\n${chars.join(", ")}`)
-                    .setColor('c375f0')
-                    .setFooter({text: "Natsuki"})
+                    .setColor('6049e3')
+                    .setFooter({text: "Luno"})
                     .setTimestamp()
             ]});
         } else {

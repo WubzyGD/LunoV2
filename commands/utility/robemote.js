@@ -22,7 +22,7 @@ module.exports = {
                 .setTitle("Add Emoji")
                 .setDescription("React to this message with the emoji you want to be added to the server.")
                 .setFooter({text: "This will time out in 60 seconds"})
-                .setColor('c375f0')
+                .setColor('6049e3')
             ]}).then(m => {
                 const rc = m.createReactionCollector((r, u) => u.id === message.author.id, {time: 60000});
                 rc.on('collect', r => {
@@ -33,8 +33,8 @@ module.exports = {
                         .setTitle("Emoji Created!")
                         .setThumbnail(`https://cdn.discordapp.com/emojis/${e.id}${e.animated ? '.gif': ''}`)
                         .setDescription(`Name: \`:${e.name}:\`\nID: ${e.id}\nURL: [Click Me](https://cdn.discordapp.com/emojis/${e.id})`)
-                        .setFooter({text: "Natsuki"})
-                        .setColor('c375f0')
+                        .setFooter({text: "Luno"})
+                        .setColor('6049e3')
                         .setTimestamp()
                     ]}).then(() => require('../../util/ask')(message, "If you'd like to rename the emoji, send the name now. Otherwise, wait 30 seconds and nothing will happen.", 30000, false, false)
                         .then(res => {
@@ -65,8 +65,8 @@ module.exports = {
             .setTitle("Emoji Created!")
             .setThumbnail(`https://cdn.discordapp.com/emojis/${e.id}${e.animated ? '.gif': ''}`)
             .setDescription(`Name: \`:${e.name}:\`\nID: ${e.id}\nURL: [Click Me](https://cdn.discordapp.com/emojis/${e.id}${e.animated ? '.gif': ''})`)
-            .setFooter({text: "Natsuki"})
-            .setColor('c375f0')
+            .setFooter({text: "Luno"})
+            .setColor('6049e3')
             .setTimestamp()
         ]}))
         .catch(() => message.channel.send("<a:NC_x:717396078294597643> There was an error trying to create that emoji. I might not have permissions to add emoji, the server may be at its emoji limit, you may have given a bad URL, not specified the emoji properly, or the file type in the URL you gave is invalid."));

@@ -32,7 +32,7 @@ module.exports = {
                         .setAuthor({name: message.guild ? message.guild.members.cache.get(user.id) ? message.guild.members.cache.get(user.id).displayName : user.username : user.username, iconURL: user.avatarURL()})
                         .setTitle(`${saves.get(user.id)} | Now Playing`)
                         .setDescription(`<@${user.id}> is currently listening to **${t.name}** by **${t.artist['#text']}**.\nView the song [here](${t.url}).`)
-                        .setColor("c375f0")
+                        .setColor("6049e3")
                         .setThumbnail(t.image[3]['#text'])
                         .setTimestamp()
                     ]})

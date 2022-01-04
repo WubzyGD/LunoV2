@@ -5,12 +5,12 @@ module.exports = {
     name: "admin",
     help: new Discord.MessageEmbed()
         .setTitle("Help -> Admin")
-        .setDescription("Make a user a Natsuki admin")
+        .setDescription("Make a user a Luno admin")
         .addField("Syntax", "`admin <add|remove|check> <@user|userID>`")
-        .addField("Notice", "This command is only available to Natsuki developers."),
+        .addField("Notice", "This command is only available to Luno developers."),
     meta: {
         category: 'Developer',
-        description: "Add or remove users as Natsuki admins",
+        description: "Add or remove users as Luno admins",
         syntax: '`admin <add|remove|check> <@user|userID>`',
         extra: "You can check if a user is an admin without being a developer."
     },
@@ -19,7 +19,7 @@ module.exports = {
         if (!args.length) {return message.channel.send(`Syntax: \`${prefix}\``);}
         let person = mention ? mention : args[1] ? client.users.cache.has(args[1]) ? client.users.cache.get(args[1]) : null : null;
         let tu = await UserData.findOne({uid: person ? person.id : message.author.id}) ? await UserData.findOne({uid: person ? person.id : message.author.id}) : new UserData({uid: person ? person.id : message.author.id});
-        if (['c', 'check'].includes(args[0])) {return message.reply(`${person ? person : message.member.displayName} ${tu.admin ? 'is' : 'is not'} a Natsuki Admin.`);}
+        if (['c', 'check'].includes(args[0])) {return message.reply(`${person ? person : message.member.displayName} ${tu.admin ? 'is' : 'is not'} a Luno Admin.`);}
         if (!['a', 'add', 'r', 'remove'].includes(args[0])) {return message.reply("You must specify whether to `add` or `remove` someone as an admin.");}
         if (!person) {return message.reply("You must mention someone to add as an admin, or use their ID.");}
         let atu = await UserData.findOne({uid: message.author.id});
@@ -34,7 +34,7 @@ module.exports = {
             .addField("Name", person.username, true)
             .addField("Developer", message.author.username, true)
             .setColor("e8da3a")
-            .setFooter({text: "Natsuki"})
+            .setFooter({text: "Luno"})
             .setTimestamp();
         client.guilds.cache.get('762707532417335296').channels.cache.get('762732961753595915').send({embeds: [logemb(['a', 'add'].includes(args[0]) ? 'Added' : 'Removed')]});
         return message.reply(`${message.guild.members.cache.get(person.id).displayName} is no${['a', 'add'].includes(args[0]) ? 'w' : ' longer'} an admin!`);

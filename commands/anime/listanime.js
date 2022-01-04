@@ -8,13 +8,13 @@ module.exports = {
     aliases: ['la', 'listani', 'lanime', 'allani', 'allanime', 'anilist', 'animelist', 'anil'],
     meta: {
         category: 'Anime',
-        description: "View a list of every anime Natsuki has in her database at the moment",
+        description: "View a list of every anime Luno has in her database at the moment",
         syntax: '`listanime [query]`',
         extra: null
     },
     help: new Discord.MessageEmbed()
         .setTitle("Help -> Anime Listing")
-        .setDescription("See a list of every Natsuki anime, or add a search query.")
+        .setDescription("See a list of every Luno anime, or add a search query.")
         .addField("Syntax", "`listanime [query]`"),
     async execute(message, msg, args, cmd, prefix, mention, client) {
         let anime = [];
@@ -41,13 +41,13 @@ module.exports = {
                 .setTitle("Anime Database")
                 .setThumbnail(client.user.avatarURL({size: 1024, dynamic: true, format: 'png'}))
                 .setDescription(s)
-                .setColor('c375f0')
+                .setColor('6049e3')
                 .setTimestamp()
             );
         }
         if (pages.length > 1) {
             let pag = new Pagination(message.channel, pages, message, client, true);
             return await pag.start({user: message.author.id, time: 60000});
-        } else {return message.channel.send({embeds: [pages[0].setFooter({text: "Natsuki"})]});}
+        } else {return message.channel.send({embeds: [pages[0].setFooter({text: "Luno"})]});}
     }
 };

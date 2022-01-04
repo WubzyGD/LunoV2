@@ -42,8 +42,8 @@ module.exports = {
             .setThumbnail(client.users.cache.get(user.id).avatarURL({size: 1024}))
             .setDescription(`For ${user.displayName}`)
             .addField("Warnings", ws)
-            .setColor("c375f0")
-            .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+            .setColor("6049e3")
+            .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
             .setTimestamp()
         ]});
     }

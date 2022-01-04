@@ -16,10 +16,10 @@ module.exports = {
         syntax: '`highvalue <char>`',
         extra: null
     },
-    help: "Mark a character as high value. Must be a member of Natsuki staff to do this.",
+    help: "Mark a character as high value. Must be a member of Luno staff to do this.",
     async execute(message, msg, args, cmd, prefix, mention, client) {
         let tu = await UserData.findOne({uid: message.author.id});
-        if (!tu || !tu.staff) {return message.channel.send("You cannot do this unless you are a member of Natsuki staff.");}
+        if (!tu || !tu.staff) {return message.channel.send("You cannot do this unless you are a member of Luno staff.");}
         if (!args[0]) {
             let tempchar = await ask(message, "What character would you like to add to your favorites list?", 60000, false, true);
             if (!tempchar) {return;}

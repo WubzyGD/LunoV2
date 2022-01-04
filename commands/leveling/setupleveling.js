@@ -37,8 +37,8 @@ module.exports = {
                     .setTitle("XP System Enabled!")
                     .setThumbnail(message.guild.iconURL({size: 2048}))
                     .setDescription(`Your server now has its leveling system enabled! If you enabled level up messages, you can set the channel for that using \`${prefix}levelchannel\`.\n\nAll members of your server will now gain XP as they talk. I'm a smart cookie, so don't try spamming. It won't work. Every member can gain more XP once per minute, no matter how many messages they send in that one minute.\n\nIf you want to see your level and how much more XP you need to level up, run \`${prefix}stats\`.`)
-                    .setColor("c375f0")
-                    .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+                    .setColor("6049e3")
+                    .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
                     .setTimestamp()
                 ]});
             });

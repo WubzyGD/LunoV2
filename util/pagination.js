@@ -32,7 +32,7 @@ class Pagination {
             }
         }
         await this.message.edit({ embeds: [this.pages[page]
-                    .setFooter({ text: `Natsuki | Page ${page + 1} of ${this.pages.length}`, iconURL: this.client.user.avatarURL() })
+                    .setFooter({ text: `Luno | Page ${page + 1} of ${this.pages.length}`, iconURL: this.client.user.avatarURL() })
                     .setTimestamp()]
         });
         this.currentPage = page;

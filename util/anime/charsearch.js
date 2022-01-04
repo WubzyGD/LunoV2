@@ -19,12 +19,12 @@ module.exports = async (message, client, search, threshold=-10000, type='full') 
             .setAuthor({name: 'Character Search', iconURL: message.author.avatarURL()})
             .setDescription(`**Name:** ${cch.name}`)
             .addField('Other', `**Anime**: ${forceAni ? cch.anime : `${ani.name} | ${ani.japname} | \`${ani.id}\``}\n\n**Gender**: ${cch.gender}\n`)
-            .setColor("c375f0")
+            .setColor("6049e3")
             .setImage(cch.images[Math.floor(Math.random() * (cch.images.length + 1))])
-            .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+            .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
             .setTimestamp();
         if (type === 'full') {
-            rte.addField("Loved by", `**${cch.loved}** Natsuki user${cch.loved === 1 ? '' : 's'}!\n\`char love ${cch.name}\``);
+            rte.addField("Loved by", `**${cch.loved}** Luno user${cch.loved === 1 ? '' : 's'}!\n\`char love ${cch.name}\``);
             if (cch.nicknames.length) {rte.addField("Nicknames/Other Names", cch.nicknames.join(", "));}
         }
         da.push(cch.id);

@@ -37,8 +37,8 @@ module.exports = {
             return options.silent ? null : message.channel.send({embeds: [new Discord.MessageEmbed()
             .setTitle('Client Evaluation')
             .setDescription(`\`\`\`js\n${output}\n\`\`\``)
-            .setColor('c375f0')
-            .setFooter({text: `Natsuki | Evaluated in ${new Date().getTime() - timer}ms`, iconURL: client.user.avatarURL()})
+            .setColor('6049e3')
+            .setFooter({text: `Luno | Evaluated in ${new Date().getTime() - timer}ms`, iconURL: client.user.avatarURL()})
             .setTimestamp()]});
         }).catch(error => {return message.channel.send(`Error: \`${error}\`.`);});
         } catch (error) {

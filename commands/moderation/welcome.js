@@ -40,8 +40,8 @@ module.exports = {
             return message.channel.send({embeds: [new Discord.MessageEmbed()
                 .setTitle("Welcome Channel/Message Updated")
                 .setDescription(`This server's member-welcoming settings have been altered by ${message.author.tag}.\n\n**Channel**: <#${ch}>\n**Response Name**: \`${args[2].toLowerCase()}\``)
-                .setColor('c375f0')
-                .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+                .setColor('6049e3')
+                .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
                 .setTimestamp()
             ]})
         }
@@ -63,8 +63,8 @@ module.exports = {
             return message.channel.send({embeds: [new Discord.MessageEmbed()
                 .setTitle("Welcome Channel/Message Updated")
                 .setDescription(`This server's member-welcoming settings have been altered by ${message.author.tag}.\n\n**Channel**: None`)
-                .setColor('c375f0')
-                .setFooter({text: "Natsuki", iconURL: client.user.avatarURL()})
+                .setColor('6049e3')
+                .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
                 .setTimestamp()
             ]});
         }

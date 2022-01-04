@@ -30,8 +30,8 @@ module.exports = {
             .setTitle("Server Leaderboard")
             .setThumbnail(message.guild.iconURL({size: 2048, dynamic: true}))
             .addField("Level", lvls)
-            .setColor('c375f0')
-            .setFooter({text: "Natsuki | Stats may be up to 2 minutes out of sync"})
+            .setColor('6049e3')
+            .setFooter({text: "Luno | Stats may be up to 2 minutes out of sync"})
             .setTimestamp()
         ]});
 

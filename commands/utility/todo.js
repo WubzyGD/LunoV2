@@ -53,8 +53,8 @@ module.exports = {
                     .setTitle(`List Created: ${ln}`)
                     .setDescription(`You now have **${Object.keys(td.lists).length}** lists (including your personal list) with a total of **${totalItems} items**.`)
                     .addField("Managing", `-To add to your new list, use \`${prefix}todo list ${ln} add\`.\n-To view its items, use \`${prefix}todo list ${ln} view\`.\n-To delete this list, use \`${prefix}todo list delete ${ln}\`.`)
-                    .setColor("c375f0")
-                    .setFooter({text: "Natsuki"})
+                    .setColor("6049e3")
+                    .setFooter({text: "Luno"})
                     .setTimestamp()]
                 });
             } else if (['d', 'delete', 'r', 'remove'].includes(args[0].toLowerCase())) {
@@ -68,8 +68,8 @@ module.exports = {
                         .setTitle(`Your ToDo lists`)
                         .setDescription(s)
                         .addField("Deletion", "To delete a list, please reply with the **name** of the list you'd like to delete.")
-                        .setColor("c375f0")
-                        .setFooter({text: "Natsuki"})
+                        .setColor("6049e3")
+                        .setFooter({text: "Luno"})
                         .setTimestamp()
                     ]});
                     let collected;
@@ -95,8 +95,8 @@ module.exports = {
                     .setAuthor({name: message.guild ? message.member.displayName : message.author.username, iconURL:  message.author.avatarURL()})
                     .setTitle(`Your ToDo lists`)
                     .setDescription(s)
-                    .setColor("c375f0")
-                    .setFooter({text: "Natsuki"})
+                    .setColor("6049e3")
+                    .setFooter({text: "Luno"})
                     .setTimestamp()
                 ]});
             } else if (td && Object.keys(td.lists).includes(args[0].trim().toLowerCase())) {
@@ -120,7 +120,7 @@ module.exports = {
             return message.channel.send({embeds: [new Discord.MessageEmbed()
                 .setAuthor({name: "To-Do Added!", iconURL: message.author.avatarURL()})
                 .setDescription(`${item}\n\`->\` In ${list === 'quick' ? "your personal quick list" : `list \`${list}\``}`)
-                .setColor('c375f0')
+                .setColor('6049e3')
             ]});
         }
 
@@ -159,7 +159,7 @@ module.exports = {
             let resembed = new Discord.MessageEmbed()
                 .setAuthor({name: `To-Do Item${items.length > 1 ? 's' : ''} Added!`, iconURL: message.author.avatarURL()})
                 .setDescription(`In ${list === 'quick' ? "your personal quick list" : `list \`${list}\``}\n- ${items.join('\n- ')}`)
-                .setColor('c375f0');
+                .setColor('6049e3');
             if (reachedMax) {resembed.addField("Notice", "The list addition process was automatically stopped because your list reached the maximum limit of 25 items.");}
             return message.channel.send({embeds: [resembed]});
         }
@@ -177,8 +177,8 @@ module.exports = {
                     .setAuthor({name: message.guild ? message.member.displayName : message.author.username, iconURL:  message.author.avatarURL()})
                     .setTitle(list === "quick" ? "Personal Quick List" : `List: "${list}"`)
                     .setDescription(s)
-                    .setColor("c375f0")
-                    .setFooter({text: "Natsuki"})
+                    .setColor("6049e3")
+                    .setFooter({text: "Luno"})
                     .setTimestamp()
                 ]}).catch(() => {
                     client.users.fetch(client.developers[0]).then(wubzy => wubzy.send("Hey stupid, someone got the todo length bug. Fix it."));
@@ -192,8 +192,8 @@ module.exports = {
                     .setAuthor({name: message.guild ? message.member.displayName : message.author.username, iconURL:  message.author.avatarURL()})
                     .setTitle(list === "quick" ? "Personal Quick List" : `List "${list}"`)
                     .setDescription(`List item **#${id}**\n\`->\` ${td.lists[list][id-1]}`)
-                    .setColor("c375f0")
-                    .setFooter({text: "Natsuki"})
+                    .setColor("6049e3")
+                    .setFooter({text: "Luno"})
                     .setTimestamp()
                 ]});
             }
@@ -213,8 +213,8 @@ module.exports = {
                     .setTitle(list === "quick" ? "Personal Quick List" : `List "${list}"`)
                     .setDescription(s)
                     .addField("Deletion", "To remove an item from your list, please reply with the number of the item you no longer want on your list.")
-                    .setColor("c375f0")
-                    .setFooter({text: "Natsuki"})
+                    .setColor("6049e3")
+                    .setFooter({text: "Luno"})
                     .setTimestamp()
                 ]});
                 try {collected = await message.channel.awaitMessages({filter: m => m.author.id === message.author.id, errors: ['time'], time: 60000, max: 1});}

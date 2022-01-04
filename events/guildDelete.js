@@ -21,7 +21,7 @@ module.exports = async (client, guild) => {
         .addField('Members', guild.members.cache.size, true)
         .addField('Position', `Server #${client.guilds.cache.size + 1}`, true)
         .setColor('ff5d6a')
-        .setFooter({text: "Natsuki"})
+        .setFooter({text: "Luno"})
         .setTimestamp()
     ]});
 };

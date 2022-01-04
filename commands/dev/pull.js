@@ -10,7 +10,7 @@ module.exports = {
         .setTitle("Help -> VCS Pull")
         .setDescription("Pulls new commits from VCS")
         .addField("Syntax", "`pull`")
-        .addField("Notice", "This command is only available to Natsuki developers."),
+        .addField("Notice", "This command is only available to Luno developers."),
     meta: {
         category: 'Developer',
         description: "Pull new commits from VSC and update the bot. Otaku zone, non-otakus not allowed.",
@@ -19,7 +19,7 @@ module.exports = {
     },
     async execute(message, msg, args, cmd, prefix, mention, client) {
         const tu = await UserData.findOne({uid: message.author.id});
-        if (!tu || !tu.developer) {return message.channel.send("You must be a Natsuki developer in order to do this!");}
+        if (!tu || !tu.developer) {return message.channel.send("You must be a Luno developer in order to do this!");}
 
         console.log(`\n${chalk.yellow('[WARN]')} >> ${chalk.gray('VCS:')} ${chalk.white('Initiating remote->local VCS sync/refresh!')}`);
 

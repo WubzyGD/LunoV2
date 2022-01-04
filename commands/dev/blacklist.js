@@ -7,18 +7,18 @@ module.exports = {
     aliases: ['bl'],
     meta: {
         category: 'Developer',
-        description: "Completely blocks a user or server from using Natsuki!",
+        description: "Completely blocks a user or server from using Luno!",
         syntax: '`blacklist <user|guild> <add|delete> [@mention|ID]`',
         extra: null
     },
-    help: "Disables a user from using Natsuki (Usage: `{{p}}blacklist <user|guild> <add|delete> [@mention|ID])`",
+    help: "Disables a user from using Luno (Usage: `{{p}}blacklist <user|guild> <add|delete> [@mention|ID])`",
     async execute(message, msg, args, cmd, prefix, mention, client) {
         if (!args.length) {return message.channel.send("Syntax: `blacklist <user|guild> <add|delete> [@mention|ID]`");}
 
         let tu = await UserData.findOne({uid: message.author.id});
 
         if (['g', 'guild'].includes(args[0].toLowerCase())) {
-            if (!tu || !tu.admin) {return message.channel.send('Sorry... you have to be a Natsuki Admin to do this!');}
+            if (!tu || !tu.admin) {return message.channel.send('Sorry... you have to be a Luno Admin to do this!');}
 
             let guild = !args[1].match(/\d+/) ? message.guild ? message.guild : null : client.guilds.cache.has(args[1]) ? client.guilds.cache.get(args[1]) : null;
             if (!guild) {return message.channel.send("You must provide a guild ID or be in a guild that you wish to blacklist!");}

@@ -85,23 +85,29 @@ module.exports = async (client, message) => {
         client.misc.cache.monners[message.author.id] = tmonners.currency;
     }
 
-    if (message.guild && client.misc.cache.monitEnabled.includes(message.guild.id)) {
+    /*if (message.guild && client.misc.cache.monitEnabled.includes(message.guild.id)) {
+        if (!client.misc.cache.monit) {client.misc.cache.monit = {};}
         if (!client.misc.cache.monit[message.guild.id]) {
             let tm = await Monitors.findOne({gid: message.guild.id});
-            client.misc.cache.monit[tm.gid] = {
-                messages: tm.messages,
-                voice: tm.voice,
-                expiry: new Date()
-            };
+            console.log(tm);
+            if (tm) {
+                client.misc.cache.monit[tm.gid] = {
+                    messages: tm.messages,
+                    voice: tm.voice,
+                    expiry: new Date()
+                };
+            }
         }
-        if (!client.misc.cache.monit) {client.misc.cache.monit = {};}
-        if (!client.misc.cache.monit[message.guild.id].messages.channels[message.channel.id]) {client.misc.cache.monit[message.guild.id].messages.channels[message.channel.id] = 0;}
-        if (!client.misc.cache.monit[message.guild.id].messages.members[message.author.id]) {client.misc.cache.monit[message.guild.id].messages.members[message.author.id] = 0;}
-        client.misc.cache.monit[message.guild.id].messages.channels[message.channel.id] += 1;
-        client.misc.cache.monit[message.guild.id].messages.members[message.author.id] += 1;
-        client.misc.cache.monit[message.guild.id].messages.total += 1;
-        client.misc.cache.monit[message.guild.id].expiry.setTime(Date.now());
-    }
+        if (client.misc.cache.monit[message.guild.id]) {
+            console.log(client.misc.cache.monit[message.guild.id]);
+            if (!client.misc.cache.monit[message.guild.id].messages.channels[message.channel.id]) {client.misc.cache.monit[message.guild.id].messages.channels[message.channel.id] = 0;}
+            if (!client.misc.cache.monit[message.guild.id].messages.members[message.author.id]) {client.misc.cache.monit[message.guild.id].messages.members[message.author.id] = 0;}
+            client.misc.cache.monit[message.guild.id].messages.channels[message.channel.id] += 1;
+            client.misc.cache.monit[message.guild.id].messages.members[message.author.id] += 1;
+            client.misc.cache.monit[message.guild.id].messages.total += 1;
+            client.misc.cache.monit[message.guild.id].expiry.setTime(Date.now());
+        }
+    }*/
 
     try {
         if (msg.startsWith(prefix) || msg.startsWith(`<@${client.user.id}>`) || msg.startsWith(`<@!${client.user.id}>`)) {

@@ -85,7 +85,7 @@ module.exports = async (client, message) => {
         client.misc.cache.monners[message.author.id] = tmonners.currency;
     }
 
-    /*if (message.guild && client.misc.cache.monitEnabled.includes(message.guild.id)) {
+    if (message.guild && client.misc.cache.monitEnabled.includes(message.guild.id)) {
         if (!client.misc.cache.monit) {client.misc.cache.monit = {};}
         if (!client.misc.cache.monit[message.guild.id]) {
             let tm = await Monitors.findOne({gid: message.guild.id});
@@ -107,7 +107,7 @@ module.exports = async (client, message) => {
             client.misc.cache.monit[message.guild.id].messages.total += 1;
             client.misc.cache.monit[message.guild.id].expiry.setTime(Date.now());
         }
-    }*/
+    }
 
     try {
         if (msg.startsWith(prefix) || msg.startsWith(`<@${client.user.id}>`) || msg.startsWith(`<@!${client.user.id}>`)) {

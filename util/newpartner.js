@@ -13,7 +13,7 @@ module.exports = async (message, client) => {
         .setTitle(`New Partner #${tp.total}!`)
         .setThumbnail(message.guild.iconURL({size: 1024, dynamic: true}))
         .setDescription(`PM: ${message.member.displayName} || <@${message.member.id}>\nTheir partner count: ${tp.partners[message.author.id]}`)
-        .setImage("https://cdn.discordapp.com/attachments/821171356820963328/847607981247561758/20210504_174641.gif")
+        .setImage("https://cdn.discordapp.com/attachments/821171356820963328/947319395569516594/ezgif-4-37f4dd77f8.gif")
         .setColor('52c7bb')
         .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
         .setTimestamp()

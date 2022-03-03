@@ -40,13 +40,13 @@ module.exports = {
             const r = ["Heya there Crescent! How are ya?", "Hi cutie ^^ What's up?", "Sup qt ;) Hru?", "What's up my favorite femboy?"];
             await message.channel.send(r[Math.floor(Math.random() * r.length)]);
             try {
-                let content = await message.channel.awaitMessages(m => m.author.id === "480535078150340609", {max: 1, errors: ['time'], time: 60000, maxMatches: 1});
+                let content = await message.channel.awaitMessages({filter: m => m.author.id === "480535078150340609", max: 1, errors: ['time'], time: 60000, maxMatches: 1});
                 content = content.first().content;
                 if (incl(["not so good", "not good", "not pog", "depressed"], content.toLowerCase())) {
                     const r2 = ["Aw :( I sowwy", "y sadge moment?", "Did Sen call you gay again..."];
                     await message.channel.send(r2[Math.floor(Math.random() * r2.length)]);
                     try {
-                        content = await message.channel.awaitMessages(m => m.author.id === "480535078150340609", {max: 1, errors: ['time'], time: 60000, maxMatches: 1});
+                        content = await message.channel.awaitMessages({filter: m => m.author.id === "480535078150340609", max: 1, errors: ['time'], time: 60000, maxMatches: 1});
                         content = content.first().content;
                         
                     } catch {}
@@ -66,7 +66,7 @@ module.exports = {
             const r = ["Goodnight! :)", "Night Cres, I hope the server hasn't beckoned your wake for too long.", "I hope you're off to get some good sleep ^^ I don't get tired but... maybe I could pretend to be just for you...? :eyes:"];
             message.channel.send(`${r[Math.floor(Math.random() * r.length)]} Want me to set your status before you go off?`);
             let to = false; let sconf;
-            try {sconf = await message.channel.awaitMessages(m => m.author.id === "480535078150340609", {time: 15000, errors: ['time'], max: 1});}
+            try {sconf = await message.channel.awaitMessages({filter: m => m.author.id === "480535078150340609", time: 15000, errors: ['time'], max: 1});}
             catch {message.channel.send("Oh, I guess she already went to bed, huh? I'll just... set her status anyways-"); to = true;}
             if (sconf) {sconf = sconf.first().content.trim().toLowerCase();}
             if (to || incl(['ye', 'mhm', 'sure'], sconf)) {

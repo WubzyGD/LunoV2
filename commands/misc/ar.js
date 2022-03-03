@@ -90,7 +90,7 @@ module.exports = {
             } else {trigger = await ask(message, "What would you like the trigger to be? This is the message that will make your AR work.", 120000); if (!trigger) {return;}}
             if (`${trigger}`.length > 150) {return message.channel.send("Your trigger needs to be less than 150 characters, please!");}
             let response = await ask(message, "What would you like my response to be?", 120000); if (!response) {return;}
-            if (`${response}`.length > 300) {return message.channel.send("Your response needs to be less than 300 characters, please!");}
+            if (`${response}`.length > 750) {return message.channel.send("Your response needs to be less than 300 characters, please!");}
 
             let tar = await AR.findOne({gid: message.guild.id}) || new AR({gid: message.guild.id});
             if (tar.triggers.length === 20) {return message.channel.send("Because of data storage concerns, your ARs are capped at 20 per server. You can join the official support server and talk to the devs if you have a legitimate reason for raising this limit and they can see about raising it for you!");}

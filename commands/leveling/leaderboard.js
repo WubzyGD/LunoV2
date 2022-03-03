@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 
 const XP = require('../../models/localxp');
+const Monners = require('../../models/monners');
 
 module.exports = {
     name: "leaderboard",
@@ -26,10 +27,18 @@ module.exports = {
         let i; for (i=0; i<lvl.length; i++) {lvls += `${i+1}. <@${lvl[i]}> -> **Level ${xp[lvl[i]][1]}**\n`;}
         lvls += `\n${cfmh} *You are ranked **#${lvlp.indexOf(message.author.id) + 1}** at Level ${xp[lvlp[lvlp.indexOf(message.author.id)]][1]}.*`;
 
+        let monners = [];
+        for await (const monner of Monners.find()) {
+            monners.push(monner);
+        }
+
+        const sm = monners.sort((a, b) => a.currency - b.currency).reverse();
+
         return message.channel.send({embeds: [new Discord.MessageEmbed()
             .setTitle("Server Leaderboard")
             .setThumbnail(message.guild.iconURL({size: 2048, dynamic: true}))
             .addField("Level", lvls)
+            .addField("Monners", `${sm.slice(0, 10).map((m, i) => `${i+1}. <@${m.uid}> -> **${m.currency}** <a:CF_mooners:868652679717589012>`).join("\n")}\n\n<a:CF_mooners2:868653224817741864> *You are ranked **#${sm.indexOf(sm.filter(m => m.uid === message.author.id)[0]) + 1}** at ${sm[sm.indexOf(sm.filter(m => m.uid === message.author.id)[0])].currency} <a:CF_mooners:868652679717589012>.*`)
             .setColor('6049e3')
             .setFooter({text: "Luno | Stats may be up to 2 minutes out of sync"})
             .setTimestamp()

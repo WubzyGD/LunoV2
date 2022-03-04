@@ -17,8 +17,8 @@ const deaths = [
 
 const before = [
     "A name is being written...", "Someone will perish soon...", "A body is *about* to be discovered...",
-    "{p} is scribbling something in their notebook...", "\*Manical laughter echoes around you*...",
-    "{p} laughs maniacally..."
+    "{w} is scribbling something in their notebook...", "\*Manical laughter echoes around you*...",
+    "{w} laughs maniacally..."
 ]; // things it says before the response is sent
 
 const responses = {
@@ -102,7 +102,7 @@ module.exports = {
         let victim = options.victim && options.victim.length ? options.victim : message.mentions.members.first().displayName;
         let killer = message.member;
 
-        let pretext = before[Math.floor(Math.random() * before.length)].replace(/{p}/g, victim);
+        let pretext = before[Math.floor(Math.random() * before.length)].replace(/{w}/g, killer.displayName);
 
         let note = await message.channel.send({embeds: [new Discord.MessageEmbed()
             .setDescription(pretext)

@@ -13,7 +13,11 @@ module.exports = {
         extra: null,
         guildOnly: true
     },
-    cooldown: 10000,
+    cooldown: {
+        time: 10000,
+        message: "Slow down there, pal! I promise your status on the leaderboard hasn't changed yet.",
+        silent: false
+    },
     help: "Find your place in the server's ranks and see the top-ranking members in the server.",
     async execute(message, msg, args, cmd, prefix, mention, client) {
         let cfmh = '<a:xp:870418598047387668>';

@@ -38,7 +38,7 @@ module.exports = async (client, member) => {
         user.send({embeds: [new Discord.MessageEmbed()
             .setTitle("Hey there!")
             .setDescription("I'm Luno, the official mascot of the Crescent's Family Discord Server!")
-            .addField("To-do", "Now that you're here:\n-Read our <#808069531507228682>,\n-Grab some roles in <#808108692557398096> and <#816145028954849280>,\n\n**-And come say hi in <#782727130009698317>!** Don't be shy!\n\nEnjoy your stay here!")
+            .addField("To-do", "Now that you're here:\n-Read our <#808069531507228682>,\n-Grab some roles in <#947999536536756284> and <#816145028954849280>,\n\n**-And come say hi in <#782727130009698317>!** Don't be shy!\n\nEnjoy your stay here!")
             .setImage("https://cdn.discordapp.com/attachments/821171356820963328/847608054483910676/20210504_154239.gif")
             .setColor('2c9cb0')
             .setThumbnail(client.guilds.cache.get(client.misc.cf).iconURL({size: 2048}))

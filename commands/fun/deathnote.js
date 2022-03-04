@@ -102,7 +102,7 @@ module.exports = {
         let victim = options.victim && options.victim.length ? options.victim : message.mentions.members.first().displayName;
         let killer = message.member;
 
-        let pretext = before[Math.floor(Math.random() * before.length)].replace(/{p}/g, victim);
+        let pretext = before[Math.floor(Math.random() * before.length)].replace(/{w}/g, killer.displayName);
 
         let note = await message.channel.send({embeds: [new Discord.MessageEmbed()
             .setDescription(pretext)

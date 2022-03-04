@@ -17,8 +17,8 @@ const deaths = [
 
 const before = [
     "A name is being written...", "Someone will perish soon...", "A body is *about* to be discovered...",
-    "{p} is scribbling something in their notebook...", "\*Manical laughter echoes around you*...",
-    "{p} laughs maniacally..."
+    "{w} is scribbling something in their notebook...", "\*Manical laughter echoes around you*...",
+    "{w} laughs maniacally..."
 ]; // things it says before the response is sent
 
 const responses = {

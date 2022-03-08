@@ -24,7 +24,7 @@ module.exports = {
         if (!args.length) {args[0] = 'enable';}
 
         if (['e', 'enable'].includes(args[0].toLowerCase())) {
-            if (client.misc.cache.chests.includes(message.guild.id)) {return message.channel.send("This server already has chest spawning enabled.")};
+            if (client.misc.cache.chests.enabled.includes(message.guild.id)) {return message.channel.send("This server already has chest spawning enabled.")};
             try {
                 am = await message.channel.send("Would you like to have me send chests to a specific channel?");
                 await am.react('👍');
@@ -43,13 +43,13 @@ module.exports = {
                     }
                     let c = new Chests({gid: message.guild.id, channel: chestCh});
                     c.save();
-                    client.misc.cache.chests.push(message.guild.id);
+                    client.misc.cache.chests.enabled.push(message.guild.id);
                     return message.channel.send({embeds: [new Discord.MessageEmbed()
                         .setTitle("Chest Spawning Enabled!")
                         .setThumbnail(message.guild.iconURL({size: 2048}))
                         .setDescription(`Your server now has its chest spawning enabled! Chests will spawn in ${chestCh.length ? `<#${chestCh}>` : 'any channel'}.`)
                         .setColor("6049e3")
-                        .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
+                        .setFooter({text: "Luno", iconURL: client.user.displayAvatarURL()})
                         .setTimestamp()
                     ]});
                 });

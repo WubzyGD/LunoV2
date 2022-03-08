@@ -34,8 +34,12 @@ client.misc = {
             hasLevelRoles: [],
             disabledChannels: new Map()
         },
-        chests: [],
         chestsTimeout: new Map(),
+        chests: {
+            enabled: [],
+            timeout: new Map(),
+            waiting: new Map()
+        },
         monit: {},
         monitEnabled: [],
         inVC: [],
@@ -47,7 +51,8 @@ client.misc = {
         animeID: new Discord.Collection(),
         charsNum: 0,
         charsLove: new Discord.Collection(),
-        monners: {}
+        monners: {},
+        tickets: new Discord.Collection()
     },
     loggers: {},
     rl: readline.createInterface({input: process.stdin, output: process.stdout}),

@@ -59,6 +59,10 @@ module.exports = {
                     const r2 = ["Sorry..not in the mood..", "Maybe we should hop in dms for a bit..;)", "Isn't this server SFW?", "Is there ever a time when you're not horny?", "We literally just had se-..I mean we just had lunch."];
                     return message.channel.send(r2[Math.floor(Math.random() * r2.length)]);
                 }
+                if (content.toLowerCase().includes("gay")) {
+                    const r2 = ["Holy shit I know you're gay shut up.", "You sound so gay right now..", "I literally don't care lmao."];
+                    return message.channel.send(r2[Math.floor(Math.random() * r2.length)]);
+                }
             } catch {}
         }
                 

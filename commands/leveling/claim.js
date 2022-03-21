@@ -22,7 +22,7 @@ module.exports = {
         chest.message.delete().catch(() => {});
         return message.channel.send({embeds: [new Discord.MessageEmbed()
             .setAuthor({name: message.member.displayName, iconURL: message.member.displayAvatarURL()})
-            .setDescription(`You've claimed ${client.utils.an(chest.rarity.name, true)} Chest with **${chest.amount} ${message.misc.mn}<:monners:926736756047495218>**`)
+            .setDescription(`You've claimed ${client.utils.an(chest.rarity.name, true)} Chest with **${chest.amount} Monners <:monners:926736756047495218>**`)
             .setColor(chest.rarity.color)
         ]}).catch(() => {});
     }

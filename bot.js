@@ -53,7 +53,8 @@ client.misc = {
         charsLove: new Discord.Collection(),
         monners: {},
         tickets: new Discord.Collection(),
-        marriageRequests: new Discord.Collection()
+        marriageRequests: new Discord.Collection(),
+        returnToSleep: new Map()
     },
     loggers: {},
     rl: readline.createInterface({input: process.stdin, output: process.stdout}),

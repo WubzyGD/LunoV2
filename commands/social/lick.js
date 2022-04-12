@@ -4,17 +4,17 @@ const UserData = require('../../models/user');
 const makeId = require('../../util/makeid');
 
 module.exports = {
-    name: "Lick",
+    name: "lick",
     help: "Have a taste of someone with `{{p}}Lick @person`!",
-    aliases: ['Lick' , 'taste'],
+    aliases: ['lick' , 'taste'],
     meta: {
         category: 'Social',
-        description: "Taste someone!!",
-        syntax: '`Lick <@user>`',
+        description: "Taste someone!",
+        syntax: '`lick <@user>`',
         extra: null
     },
     async execute(message, msg, args, cmd, prefix, mention, client) {
-        let savess = await Saves.findOne({name: 'Lick'}) ? await Saves.findOne({name: 'Lick'}) : new Saves({name: 'Lick'});
+        let savess = await Saves.findOne({name: 'lick'}) ? await Saves.findOne({name: 'lick'}) : new Saves({name: 'lick'});
         let saves = savess.saves;
         if (!args.length) {
             let name = message.guild ? message.member.displayName : message.author.username;

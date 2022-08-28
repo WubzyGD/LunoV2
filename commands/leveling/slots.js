@@ -50,9 +50,9 @@ module.exports = {
         if (isNaN(Number(amount))) {return message.channel.send("Looks like your specified amount wasn't actually a number. Try again?");}
         amount = Number(amount);
         if (amount < 1) {return message.channel.send("You have to actually gamble something!");}
-        let tm = await Monners.findOne({uid: message.author.id});
-        if (!tm || !tm.currency) {return message.channel.send("Looks like you don't have any money to gamble in the first place!");}
-        if (tm.currency < amount) {return message.channel.send(`You tried to bet **${amount}** <:monners:926736756047495218>, but you only have **${tm.currency}** <:monners:926736756047495218>.`);}
+        let tm = client.misc.cache.monners[message.author.id];
+        if (!tm) {return message.channel.send("Looks like you don't have any money to gamble in the first place!");}
+        if (tm < amount) {return message.channel.send(`You tried to bet **${amount}** <:monners:926736756047495218>, but you only have **${tm}** <:monners:926736756047495218>.`);}
 
         const pick = () => slots[Math.floor(Math.random() * slots.length)];
         const dis = () => [[pick(), pick(), pick()],[pick(), pick(), pick()],[pick(), pick(), pick()]];

@@ -22,6 +22,7 @@ const slots = [ //emoji, mode, amount, bonus
 
 module.exports = {
     name: "slots",
+    aliases: ['s'],
     meta: {
         category: 'Leveling',
         description: "Try your hand at the slot machine!",

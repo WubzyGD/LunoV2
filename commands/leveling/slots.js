@@ -43,8 +43,8 @@ module.exports = {
             if (['n', 'no'].includes(conf.trim().toLowerCase())) {
                 amount = await ask(message, "How much would you like to gamble?", 60000, false, true); if (!amount) {return;}
             }
-            if (!['yes', 'ye', 'y', 'sure'].includes(conf.trim().toLowerCase())) {return;}
-            amount = 100;
+            else if (!['yes', 'ye', 'y', 'sure'].includes(conf.trim().toLowerCase())) {return;}
+            else {amount = 100;}
         } else {amount = args[0].toLowerCase();}
         if (isNaN(Number(amount))) {return message.channel.send("Looks like your specified amount wasn't actually a number. Try again?");}
         amount = Number(amount);

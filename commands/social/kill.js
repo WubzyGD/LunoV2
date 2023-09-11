@@ -19,20 +19,19 @@ module.exports = {
         if (!args.length) {
             let name = message.guild ? message.member.displayName : message.author.username;
             return message.channel.send(message.guild ? {embeds: [new Discord.MessageEmbed()
-                    .setTitle(`${name} is feeling homicidal..watch out!`)
+                    .setTitle(`${name} is feeling homicidal... watch out!`)
                     .setThumbnail(message.author.avatarURL({size: 2048}))
                     .setDescription(`Brutally murder someone with \`${prefix}kill @${name}\`!`)
                     .setColor('bb0a1e')
                     .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
                     .setTimestamp()]}
-                : "You can't kill me..don't even try."
+                : "You can't kill me... don't even try."
             );}
         if (mention && args[0].match(/^<@!?\d+>$/)) {
-            if (!message.guild) {return message.reply("You can't kill me..don't even try.");}
+            if (!message.guild) {return message.reply("You can't kill me... don't even try.");}
             if (!message.guild.members.cache.has(mention.id)) {return message.reply("The person must have ran from their inevitable death..");}
             if (message.author.id === mention.id) {return message.reply("Uhhh no. Please don't try to hurt yourself..");}
-            let name = message.guild ? message.member.displayName : message.author.username;
-            let uname = message.guild.members.cache.get(mention.id).displayName;
+            if (mention.id === client.user.id) {return message.channel.send(['lol', "Did I ever tell you I'm actually a death god?", "You can't kill me! Believe me, I've tried."][Math.floor(Math.random() * 3)]);}
             return message.channel.send({embeds: [new Discord.MessageEmbed()
                 .setAuthor({name: `${message.guild ? message.member.displayName : message.author.username} brutally murders ${message.guild.members.cache.get(mention.id).displayName}..Rest in Peace.`, iconURL: message.author.avatarURL()})
                 .setImage(String(Array.from(saves.values())[Math.floor(Math.random() * saves.size)]))

@@ -32,7 +32,7 @@ module.exports = async client => {
 
 	client.lfm = new lastfm.LastFmNode({api_key: client.config.lfm.key, secret: client.config.lfm.secret});
 
-	setTimeout(() => client.user.setActivity(`over ${client.guilds.cache.get(client.misc.cf).members.cache.size} members!`, {type: "WATCHING"}), 60000);
+	setTimeout(() => client.user.setActivity(`over ${message.guild.memberCount - message.guild.members.cache.filter(m => client.users.cache.get(m.id).bot).size} members!`, {type: "WATCHING"}), 60000);
 
 	const setPL = async () => {let tg; for (tg of Array.from(client.guilds.cache.values)) {
 		let tguild = await GuildSettings.findOne({gid: tg.id});

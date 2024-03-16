@@ -27,7 +27,11 @@ module.exports = {
                 .setTitle("Server Store")
                 .setThumbnail(message.guild.iconURL({size: 1024, dynamic: true}))
                 .setDescription(`Use \`${prefix}shop info\` to get more info on a specific item.`)
-                .addField("Items", `${ts.items.map(i => `**${i.name}** *「${client.utils.c(i.buyType)}」* -> <:monners:926736756047495218>**${i.price}**`).join('\n')}`)
+                .addField("Items", `${ts.items.map((x, i) => `\`${`${i}`.padStart(2, '0')}\` **${x.name}** *「${client.utils.c(x.buyType)}」* -> <:monners:926736756047495218>**${x.price}**`).join('\n')}`)
+                .setColor('6049e3')
+                .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
+                .setImage("https://cdn.discordapp.com/attachments/807646521825820682/1218495743032033360/miraimoney.gif")
+                .setTimestamp()
             ]})
         }
         if (['init', 'setup', 'in', 'initialize', 'en', 'enable'].includes(args[0])) {
@@ -37,6 +41,10 @@ module.exports = {
             return ns.save()
                 .then(() => message.channel.send("Done!"))
                 .catch(() => message.channel.send("Something went wrong when trying to do that! Try again...?"));
+        }
+        if (!ts) {return message.channel.send("Your server doesn't have a shop setup~!");}
+        if (['i', 'info', 'view', 'v'].includes(args[0])) {
+            
         }
     }
 };

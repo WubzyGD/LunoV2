@@ -46,5 +46,5 @@ module.exports = async (client, member) => {
         ]}).catch(() => {});
     }).catch(() => {});
 
-    client.user.setActivity(`over ${client.guilds.cache.get(client.misc.cf).members.cache.size} members!`, {type: "WATCHING"});
+    client.user.setActivity(`over ${member.guild.memberCount - member.guild.members.cache.filter(m => client.users.cache.get(m.id).bot).size} members!`, {type: "WATCHING"});
 };

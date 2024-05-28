@@ -53,13 +53,28 @@ module.exports = {
         .setDescription("View your level and XP in the server, or someone else's")
         .addField("Syntax", "`stats [@user|userID]`"),
     async execute(message, msg, args, cmd, prefix, mention, client) {
-        if (!client.misc.cache.lxp.enabled.includes(message.guild.id)) {return message.channel.send("Your server doesn't have leveling enabled!");}
+        if (!client.misc.cache.lxp.enabled.includes(message.guild.id)) {return message.channel.send("Your server doesn't have leveling enabled!");} 
+
+        if (args[0] && args[0] == 'rate') {
+            if (!message.member.permissions.has("ADMINISTRATOR")) {return message.channel.send("You must be an administrator in order to do that!");}
+            if (!args[1] || isNaN(args[1]) || isNaN(parseFloat(args[1])) || Number(args[1]) <= 0) {return message.channel.send("You must send a greater-than-0 number to use as a gain rate multiplier!");}
+            let txp = await LXP.findOne({gid: message.guild.id});
+            if (!txp) {return message.channel.send("Your server doesn't have leveling enabled!");}
+            let newRate = Math.floor(Number(args[1]));
+            if (newRate === 1) {
+                if (!client.misc.cache.lxp.rates.has(message.guild.id)) {return message.channel.send("Already using normal (1x) gain rate!");}
+                client.misc.cache.lxp.rates.delete(message.guild.id);
+                return message.channel.send("Rate cleared.");
+            }
+            if (newRate === client.misc.cache.lxp.rates.get(message.guild.id)) {return message.channel.send(`You're already running a ${newRate}x gain rate!`);}
+            client.misc.cache.lxp.rates.set(message.guild.id, newRate);
+            return message.channel.send("Rate set! You **will** need to manually reset it (`xp rate 1`).");
+        }
+
         let u = args[0] ? (message.mentions.members.first() || message.guild.members.cache.get(args[0])) : message.member;
         if (!u) {return message.channel.send("I can't find that user!");}
         let xp;
         if (!client.misc.cache.lxp.xp[message.guild.id] || !client.misc.cache.lxp.xp[message.guild.id][u.id]) {
-            let txp = await LXP.findOne({gid: message.guild.id});
-            if (!txp) {return message.channel.send("Your server doesn't have leveling enabled!");}
             if (!txp.xp[u.id]) {return message.channel.send(`${u.id === message.author.id ? "You" : "That user"} doesn't have any leveling info available!`);}
             xp = {xp: txp.xp[u.id][0], level: txp.xp[u.id][1]};
         } else {xp = client.misc.cache.lxp.xp[message.guild.id][u.id];}

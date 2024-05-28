@@ -17,7 +17,7 @@ const applyText = (canvas, text) => {
 
 module.exports = async (client, member, channel) => {
     client.misc.cache.lxp.xp[channel.guild.id][member].lastXP = new Date().getTime();
-    client.misc.cache.lxp.xp[channel.guild.id][member].xp += 10;
+    client.misc.cache.lxp.xp[channel.guild.id][member].xp += client.misc.cache.lxp.rates.has(channel.guild.id) ? client.misc.cache.lxp.rates.get(channel.guild.id) * 10 : 10;
     client.misc.cache.monners[member] += (Math.floor(client.misc.cache.lxp.xp[channel.guild.id][member].level / 35) + 1);
 
     let x = client.misc.cache.lxp.xp[channel.guild.id][member].level;

@@ -32,7 +32,8 @@ client.misc = {
             enabled: [],
             xp: {},
             hasLevelRoles: [],
-            disabledChannels: new Map()
+            disabledChannels: new Map(),
+            rates: new Map()
         },
         chestsTimeout: new Map(),
         chests: {

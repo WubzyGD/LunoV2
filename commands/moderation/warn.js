@@ -4,6 +4,7 @@ const Mod = require('../../models/mod');
 
 const {TagFilter} = require('../../util/tagfilter');
 const {Tag} = require('../../util/tag');
+const {Pagination} = require("../../util/pagination");
 
 module.exports = {
     name: "warn",
@@ -24,36 +25,36 @@ module.exports = {
         if (!message.member.permissions.has("MANAGE_MESSAGES") && !message.member.permissions.has("MANAGE_GUILD")) {return message.reply("You must be a server moderator (manage messages or manage server permissions) to use this command.");}
         if (args.length < 2 && !['check', 'c', 'list', 'l', 'clear', 'e', 'empty'].includes(args[0].toLowerCase())) {return message.channel.send("You must provide a reason for warning the user, or `check` or `clear`.");}
 
-        let user = message.mentions.members.first() && args[0].match(/^<@!?\d+>$/) ? message.mentions.members.first() : message.guild.members.cache.has(args[0]) ? message.guild.members.cache.get(args[0]) : null;
+        let user = message.mentions.members.first() ? message.mentions.members.first() : message.guild.members.cache.has(args[0]) ? message.guild.members.cache.get(args[0]) : null;
         if (!user && args.length > 1) {return message.channel.send("Either you didn't mention a user, or I can't find that user!");}
         if (args.length > 1) {args.shift();}
 
         if (['check', 'c', 'list', 'l'].includes(args[0].toLowerCase())) {
-            user = user ? user : message.member;
+            user = user || message.mentions.members.first() || args[1] ? message.guild.members.cache.has(args[1]) : message.member;
+            if (!user) {return message.channel.send("You didn't mention a valid user or provide an ID for me to check the warnings of!");}
             let mh = await Mod.findOne({gid: message.guild.id});
             if (!mh || !Object.keys(mh.warnings).length) {return message.reply("There are no warnings available in this server.");}
 
             if (!mh.warnings[user.id] || !mh.warnings[user.id].length) {return message.reply(`${user.id === message.author.id ? 'You have' : 'That user has'} never been warned in this server.`);}
-            //console.log(mh.cases, mh.warnings);
-            let ws = '';
+            let ws = [];
             let cwc = 0;
             let warning; for (warning of mh.warnings[user.id]) {
                 let tcase = mh.cases[warning - 1];
                 if (tcase.status !== "Cleared") {
-                    ws += `\`Case #${warning}\` - Issued by <@${tcase.moderators[0]}>\n${tcase.reason}\n\n`;
+                    ws.push(`Case \`#${warning}\` - Issued by <@${tcase.moderators[0]}>\n${tcase.reason}\n\n`);
                 } else {cwc++;}
             }
-            if (cwc > 0) {ws += '*Plus ' + cwc + ' other warnings that have been cleared.*';}
+            if (cwc > 0) {ws[ws.length - 1] += '\n*Plus ' + cwc + ' other warnings that have been cleared.*';}
             if (cwc === mh.warnings[user.id].length) {return message.reply("That user has no uncleared warnings.");}
-            return message.channel.send({embeds: [new Discord.MessageEmbed()
+            return new Pagination(message.channel, [...client.utils.split(ws, 5)].map(x => new Discord.MessageEmbed()
                 .setTitle("User Warnings")
-                .setThumbnail(client.users.cache.get(user.id).avatarURL({size: 1024}))
+                .setThumbnail(client.users.cache.get(user.id).displayAvatarURL({size: 1024}))
                 .setDescription(`For ${user.displayName}`)
-                .addField("Warnings", ws)
+                .addField("Warnings", x.join(``))
                 .setColor("6049e3")
                 .setFooter({text: "Luno", iconURL: client.user.avatarURL()})
                 .setTimestamp()
-            ]});
+            ), message, client).start({endTime: 60000});
         }
 
         else if (['clear', 'e', 'empty'].includes(args[0].toLowerCase())) {

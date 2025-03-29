@@ -153,6 +153,7 @@ async function init() {
     //random element of array
     client.utils.gr = list => list[Math.floor(Math.random() * list.length)];
     client.utils.logch = async () => {return client.guilds.cache.get('762707532417335296').channels.cache.get('762732961753595915');};
+    client.utils.split = function*(x, n) {for (let i = 0; i < x.length; i += n) {yield(x.slice(i, i + n));}}
     client.guildconfig = {};
     client.guildconfig.prefixes = new Map();
 

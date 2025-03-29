@@ -31,5 +31,8 @@
         "start": "node bot.js",
         "swin": "run",
         "dev": "node bot.js -dev"
+    },
+    "devDependencies": {
+        "typescript": "^5.7.3"
     }
 }
